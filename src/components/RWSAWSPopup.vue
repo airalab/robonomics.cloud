@@ -3,7 +3,7 @@
     <div class="overlay" @click="$emit('closeModal')"></div>
   
     <div class="modal aws-vs-rws">
-      <button class="modal__close-btn" @click="$emit('closeModal')"></button>
+      <button class="modal__close-btn" @click="$emit('closeModal')" aria-label="close rws vs aws popup"></button>
       <h3>RWS vs AWS compare&nbsp;specifications</h3>
       <PopupItem
        v-for="item in items" 

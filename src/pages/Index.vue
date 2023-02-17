@@ -9,7 +9,7 @@
 
         <div class="wrapper">
           <div class="subscan">
-            <g-link to="https://robonomics.subscan.io/">
+            <g-link to="https://robonomics.subscan.io/" aria-label="visit subscan">
               <g-image src="~/assets/images/subscan.png" alt="subscan"/>
             </g-link>
             <div class="subscan__stats">
@@ -37,7 +37,7 @@
           <p>With RWS you will have tha ability to control Smart home remotely without third party corporations, own your data, do not share with the vendor, escape centralized cloud server shutdowns.</p>
         </div>
         <div class="link-with-arrow column link-with-arrow--mw">
-          <button @click="showModal = true">
+          <button @click="showModal = true" aria-label="open rws vs aws popup">
             RWS vs AWS specification&nbsp;table
           </button>
         </div>
@@ -58,12 +58,12 @@
               :percentage="progress.percentage"
             />
           </div>
-          <!-- <g-link  class="join-our-progress__survey__link" to="/smart-home-survey">
+          <g-link  class="join-our-progress__survey__link" to="/smart-home-survey" aria-label="take our survey">
             <div class="title-with-bg">
               <span>How ready are you for smart home?</span>
             </div>
             <span>Take our survey</span>
-          </g-link> -->
+          </g-link>
         </div>
       </div>
     </section>
@@ -87,7 +87,7 @@
               <li>User Management & Access Control</li>
             </ul>
             <div class="link-with-arrow">
-              <g-link to="https://dapp.robonomics.network/#/">
+              <g-link to="https://dapp.robonomics.network/#/" aria-label="visit our dapp">
                 dapp.robonomics.network
               </g-link>
             </div>
@@ -102,7 +102,7 @@
         <h2>How to connect Home Assistant</h2>
         <p>Home Assistant is an open-source home automation system that provides a centralized hub for controlling smart devices in your home network. By integrating with RWS, a decentralized cloud service, you can enhance the functionality and security of your smart home.</p>
         <div class="link-with-arrow">
-          <g-link to="https://wiki.robonomics.network/docs/robonomics-smart-home-overview">
+          <g-link to="https://wiki.robonomics.network/docs/robonomics-smart-home-overview" aria-label="check our wiki">
             Watch out the guide on Wiki
           </g-link>
         </div>
@@ -120,7 +120,7 @@
           <li>Basic skills for using the Robonomics parachain for IoT</li>
         </ul>
         <div class="link-with-arrow">
-          <g-link to="https://robonomics.academy/en/online-courses/smart-home-course/">
+          <g-link to="https://robonomics.academy/en/online-courses/smart-home-course/" aria-label="visit our academy and check its courses">
             Start course now
           </g-link>
         </div>
@@ -297,6 +297,11 @@ export default {
     color: var(--color-blue);
     font-weight: 500;
     z-index: 10;
+    transition: color 0.33s ease-in-out;
+  }
+
+  .join-our-progress__survey__link:hover span {
+    color: var(--color-purple);
   }
 
   .title-with-bg {

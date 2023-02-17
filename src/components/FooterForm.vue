@@ -49,7 +49,6 @@ export default {
     location: '',
     recaptchaSitekey: process.env.GRIDSOME_RECAPTCHA,
     gscript: process.env.GRIDSOME_CONTACTS_FORM_SCRIPT,
-    // recaptchaSitekey: "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" //test localhost
     }
   },
   methods: {
