@@ -58,12 +58,12 @@
               :percentage="progress.percentage"
             />
           </div>
-          <!-- <g-link  class="join-our-progress__survey__link" to="/smart-home-survey">
+          <g-link  class="join-our-progress__survey__link" to="/smart-home-survey">
             <div class="title-with-bg">
               <span>How ready are you for smart home?</span>
             </div>
             <span>Take our survey</span>
-          </g-link> -->
+          </g-link>
         </div>
       </div>
     </section>
