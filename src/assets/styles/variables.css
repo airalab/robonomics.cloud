@@ -1,0 +1,31 @@
+body {
+
+	--base-font-size: 1.2rem;
+	--font-family: 'Roboto', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-family-code: 'Roboto Mono', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+
+	--color-dark: #000000;
+	--color-light: #ffffff;
+	--color-green: #13ff9c;
+	--color-blue: #2949d3;
+	--color-dark-blue: #3838a8;
+	--color-purple-light: #ded6ff;
+	--color-purple: #bdacff;
+  --color-gray: #2a2a2c;
+
+	--color-yellowish: #ebebeb;
+	--color-blueish: #d6e4f7;
+
+ 	--text-color: #000000;
+	--text-color-invert: #ffffff;
+
+  --color-link-hover: #7bd4fd;
+
+	--animation-bump: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+  --space: 2rem;
+  --space-text: 2rem;
+  --content-width: 1400px;
+  --text-width: 780px;
+
+}

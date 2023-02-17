@@ -1,0 +1,23 @@
+{
+  "name": "robonomics.cloud",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "build-m1": "export NODE_OPTIONS=--openssl-legacy-provider && gridsome build",
+    "develop": "gridsome develop",
+    "develop-m1": "export NODE_OPTIONS=--openssl-legacy-provider && gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "gridsome": "^0.7.0",
+    "gridsome-plugin-google-sheets-post": "^2.0.1",
+    "vue-in-viewport-directive": "^2.0.2",
+    "vueinview": "^1.0.7"
+  },
+
+  "overrides": {
+    "gridsome": {
+      "sharp": "^0.30.7"
+    }
+  }
+}
