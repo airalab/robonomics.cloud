@@ -41,6 +41,11 @@ export default {
     color: var(--color-light)
   }
 
+  /* .hero .layout {
+    position: relative;
+    z-index: 250;
+  } */
+
   @media screen and (max-width: 1050px) {
     .hero {
       margin-bottom: calc(var(--space) * 4);

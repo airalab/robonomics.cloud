@@ -1,16 +1,26 @@
 <template>
-  <header class="header">
-    <g-link to="/" class="header__wrapper">
-      <g-image alt="logo" src="~/assets/images/rws__logo.svg" width="70" />
-    </g-link>
-    <button :class="{'burger--active': isMenuOpen}" class="burger header__burger" aria-label="Open menu" @click="isMenuOpen = !isMenuOpen">
-      <span class="burger__line"></span>
-    </button>
+  <header class="header" :class="{'header--active': isMenuOpen}">
+    <div class="layout">
+      <g-link to="/" class="header__wrapper">
+        <g-image alt="logo" src="~/assets/images/rws__logo.svg" width="70" />
+      </g-link>
+      <button :class="{'burger--active': isMenuOpen}" class="burger header__burger" aria-label="Open menu" @click="isMenuOpen = !isMenuOpen">
+        <span class="burger__line"></span>
+      </button>
+    </div>
+
+    <!-- menu -->
+    <Menu :class="{'menu--active': isMenuOpen}" />
+
   </header>
 </template>
 
 <script>
 export default {
+
+  components: {
+    Menu: () => import('~/components/Menu.vue'),
+  },
 
   data() {
     return {
@@ -24,11 +34,19 @@ export default {
 <style scoped>
 
   .header {
+    position: relative;
+    padding: var(--space) 0;
+    background-color: var(--color-blue);
+  }
+
+  .header--active {
+    z-index: 250;
+  }
+
+  .header .layout {
     display: flex;
-    padding: var(--space);
     align-items: center;
     justify-content: space-between;
-    background-color: var(--color-blue);
   }
 
   .header__wrapper {

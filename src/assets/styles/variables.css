@@ -11,15 +11,24 @@ body {
 	--color-dark-blue: #3838a8;
 	--color-purple-light: #ded6ff;
 	--color-purple: #bdacff;
+	--color-dark-purple: #332ac0;
+	--color-darkest-purple: #221d73;
   --color-gray: #2a2a2c;
 
 	--color-yellowish: #ebebeb;
 	--color-blueish: #d6e4f7;
 
+	--btn-color-green:#00c371;
+	--btn-color-violet: #cd51f9fc;
+	--btn-color-pink: #f951a1fc;
+
+
  	--text-color: #000000;
 	--text-color-invert: #ffffff;
 
   --color-link-hover: #7bd4fd;
+
+	--color-menu-bg: #2c268a;
 
 	--animation-bump: cubic-bezier(0.6, 0.04, 0.98, 0.335);
 
