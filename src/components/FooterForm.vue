@@ -8,7 +8,7 @@
       type="email" 
       placeholder="Your email" 
       data-gsp-name="Email" 
-      :data-gsp-data="data_email" 
+      :data-gsp-data="data_email ? data_email : '-'" 
       v-model="data_email"
       :disabled="result === 'success'"
     >

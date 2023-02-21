@@ -69,7 +69,7 @@
           <button disabled @click="showSharePopup = true" class="share__btn">Share</button>
         </div>
 
-        <SharePopup :class="{'active': showSharePopup}" @closeModal="closeModal"/>
+        <SharePopup :class="{'active': showSharePopup}" @closeModal="closeModal" />
       </div>
 
 
@@ -100,22 +100,11 @@ export default {
       result: {
         text: '',
         title: '',
-        textPlain: ''
       },
 
       metaTitle: 'How ready are you for smart home?',
       metaDescription: 'Decentralized cloud over web3 technologies for Robotics and IoT.',
       metaImage: '/OG/robonomics_cloud_survey.jpg'
-    }
-  },
-
-  watch: {
-    'isResultsShown'(curr, old){
-      console.log(curr, old)
-      if(curr) {
-        this.metaTitle = this.result.title;
-        this.metaDescription = this.result.text
-      }
     }
   },
 
@@ -163,15 +152,12 @@ export default {
       if(countOne > countThree && countOne > countTwo) {
         this.result.title = `Great news!`
         this.result.text = `<span class="text-with-bg">You're all set for a smart home</span>. Just be careful with which cloud service you choose to centralize your devices and data. Otherwise, you may find your fridge ordering milk without your consent, and your vacuum secretly plotting against you.`
-        this.result.textPlain = `You're all set for a smart home. Just be careful with which cloud service you choose to centralize your devices and data. Otherwise, you may find your fridge ordering milk without your consent, and your vacuum secretly plotting against you.`
       } else if (countTwo > countThree && countTwo > countOne || countTwo === countOne || countTwo === countThree) {
         this.result.title = `Hmm… `
         this.result.text = `<span class="text-with-bg">It looks like a smart home might not be your cup of tea</span>. But hey, who needs automation when you've got hands to switch things on and off, right? And don't worry, you can still enjoy modern conveniences in your home by incorporating a few smart devices to make life easier.`
-        this.result.textPlain = `It looks like a smart home might not be your cup of tea. But hey, who needs automation when you've got hands to switch things on and off, right? And don't worry, you can still enjoy modern conveniences in your home by incorporating a few smart devices to make life easier.`
       } else {
         this.result.title = `Uh-oh!`
         this.result.text = `<span class="text-with-bg">It seems like a smart home just isn't your jam</span>. That's okay, you can always rely on carrier pigeons to get messages across, and candles to light up your home.`
-        this.result.textPlain = `It seems like a smart home just isn't your jam. That's okay, you can always rely on carrier pigeons to get messages across, and candles to light up your home.`
       }
     },
 
