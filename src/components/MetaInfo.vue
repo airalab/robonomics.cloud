@@ -24,13 +24,15 @@ export default {
   data() {
     return {
       metaTitle: '',
-      metaDescription: ''
+      metaDescription: '',
+      metaImage: ''
     }
   },
+
   computed: {
     image() {
       if(this.pageImage != '') {
-        return this.$static.metadata.siteUrl + this.pageImage
+        return this.$static.metadata.siteUrl + this.metaImage
       }
       else{
         return this.$static.metadata.siteUrl + '/OG/robonomics_cloud.jpg'
@@ -40,9 +42,22 @@ export default {
       return this.$static.metadata.siteUrl + this.$route.fullPath
     },
   },
+
+  watch: {
+    $props: {
+      handler() {
+        this.metaTitle = this.pageTitle;
+        this.metaDescription = this.pageDescription;
+        this.metaImage = this.pageImage;
+      },
+      deep: true,
+      immediate: true,
+    },
+  },
+
   metaInfo() {
-    const title =  this.pageTitle + ' / ' + this.$static.metadata.siteName;
-    const description = this.pageDescription;
+    const title =  this.metaTitle + ' / ' + this.$static.metadata.siteName;
+    const description = this.metaDescription;
     const image = this.image;
     return {
       title: title,
@@ -70,6 +85,12 @@ export default {
         { name: "twitter:creator", content: '@AIRA_Robonomics' }
       ]
     };
+  },
+
+  created() {
+    this.metaTitle = this.pageTitle;
+    this.metaDescription = this.pageDescription;
+    this.metaImage = this.pageImage;
   }
 };
 </script>
