@@ -171,7 +171,7 @@ export default {
     margin-bottom: 0;
     min-height: 646px;
     height: 100%;
-    background-image: url('/assets/img/blue__houses.png');
+    background-image: url('../assets/images/blue__houses.png');
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: 1080px;
