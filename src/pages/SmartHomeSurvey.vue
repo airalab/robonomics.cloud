@@ -1,5 +1,14 @@
 <template>
   <Layout :useClass="false">
+
+    <!-- meta -->
+
+    <MetaInfo
+      pageTitle="Robonomics Web Services"
+      pageDescription="Decentralized cloud over web3 technologies for Robotics and IoT."
+      pageImage="/OG/robonomics_cloud_survey.jpg"
+    />
+
     <section class="survey">
 
       <!-- take survey -->
@@ -17,19 +26,21 @@
         <p v-if="errors[questionIndex]" class="error">
           {{ error }}
         </p>
-        <QuizProgress :class="{'title-green': questionIndex === questions.length}" title="How ready are you for smart home?" :percentage=" String(progressBarPercentage)" />
-        <QuestionItem 
-          v-for="(item, index) in questions"
-          :key="item.id"
-          :question="item.question"
-          :options="item.options"
-          v-show="index === questionIndex"
-          @nextQuestion="nextQuestion"
-        />
+        <QuizProgress :class="{'title-green': questionIndex === questions.length}" title="How ready are you for smart home?" :percentage=" 
+        String(progressBarPercentage)" class="animate-inside-slide in-viewport" v-in-viewport.once />
+          <QuestionItem 
+            v-for="(item, index) in questions"
+            :key="item.id"
+            :question="item.question"
+            :options="item.options"
+            v-show="index === questionIndex"
+            @nextQuestion="nextQuestion"
+          />
+
       </div>
 
       <!-- get results -->
-      <div class="survey-get-results layout" v-if="questionIndex === questions.length && !isResultsShown">
+      <div class="survey-get-results layout animate-inside-fast in-viewport" v-in-viewport.once v-if="questionIndex === questions.length && !isResultsShown">
         <div class="grid grid-2">
           <h3 class="survey-get-results__title">
             Almost there...
@@ -42,7 +53,7 @@
 
 
       <!-- results -->
-      <div class="survey-results layout" v-if="isResultsShown">
+      <div class="survey-results layout animate-inside-fast in-viewport" v-in-viewport.once v-if="isResultsShown">
         <div class="grid grid-2">
           <div class="survey-results__image" width="50%">
           </div>
@@ -130,9 +141,9 @@ export default {
 
       const responsesString = this.responses.join(',');
 
-      const countOne = responsesString.match(new RegExp("1", "g") || []).length;
-      const countTwo = responsesString.match(new RegExp("2", "g") || []).length;
-      const countThree = responsesString.match(new RegExp("3", "g") || []).length;
+      const countOne = responsesString.match(new RegExp("1", "g") || []) ? responsesString.match(new RegExp("1", "g") || []).length : 0;
+      const countTwo = responsesString.match(new RegExp("2", "g") || []) ?  responsesString.match(new RegExp("2", "g") || []).length : 0;
+      const countThree = responsesString.match(new RegExp("3", "g") || []) ? responsesString.match(new RegExp("3", "g") || []).length : 0;
 
       if(countOne > countThree && countOne > countTwo) {
         this.result.title = `Great news!`

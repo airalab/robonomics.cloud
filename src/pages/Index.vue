@@ -1,6 +1,13 @@
 <template>
   <Layout :useClass="false">
 
+    <!-- meta -->
+    <MetaInfo
+      pageTitle="Robonomics Web Services"
+      pageDescription="Decentralized cloud over web3 technologies for Robotics and IoT."
+      pageImage="/OG/robonomics_cloud.jpg"
+    />
+
     <!-- polkadot ecosystem -->
     <section class="polkadot-ecosystem">
       <div class="layout">
@@ -285,8 +292,8 @@ export default {
     height: 105%;
     background-image: url('../assets/images/girl.png');
     background-repeat: no-repeat;
-    background-position: right -32px bottom;
-    background-size: 362px 334px;
+    background-position: right 3px bottom;
+    background-size: 330px 303px;
   }
 
   .join-our-progress__survey__link span {

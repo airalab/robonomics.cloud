@@ -1,0 +1,75 @@
+<template></template>
+  
+<static-query>
+query {
+  metadata {
+    siteName
+    siteUrl
+  }
+}
+</static-query>
+
+
+<script>
+export default {
+  props: {
+      pageTitle: { type: String, default: '' },
+      pageDescription: { type: String, default: '' },
+      pageImage: { type: String, default: '' },
+      pageImageWidth: { type: String, default: '1280' },
+      pageImageHeight: { type: String, default: '765' },
+      pageLang: {type: String, default: 'en'}
+  },
+
+  data() {
+    return {
+      metaTitle: '',
+      metaDescription: ''
+    }
+  },
+  computed: {
+    image() {
+      if(this.pageImage != '') {
+        return this.$static.metadata.siteUrl + this.pageImage
+      }
+      else{
+        return this.$static.metadata.siteUrl + '/OG/robonomics_cloud.jpg'
+      }
+    },
+    url(){
+      return this.$static.metadata.siteUrl + this.$route.fullPath
+    },
+  },
+  metaInfo() {
+    const title =  this.pageTitle + ' / ' + this.$static.metadata.siteName;
+    const description = this.pageDescription;
+    const image = this.image;
+    return {
+      title: title,
+      htmlAttrs: {
+        lang: 'en',
+        amp: true
+      },
+      meta: [
+        { key: 'description', name: 'description', content: description },
+        // Some Open Graph Tags
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: this.$static.metadata.siteName },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: this.pageImageWidth },
+        { property: "og:image:height", content: this.pageImageHeight },
+        { property: "og:url", content: this.url },
+
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:image", content: image },
+        { name: "twitter:description", content: description },
+        { name: "twitter:site", content: '@AIRA_Robonomics' },
+        { name: "twitter:creator", content: '@AIRA_Robonomics' }
+      ]
+    };
+  }
+};
+</script>

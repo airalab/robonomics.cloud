@@ -8,6 +8,7 @@ import '~/assets/styles/utils.css'
 import '~/assets/styles/animation.css'
 
 import DefaultLayout from '~/layouts/Default.vue'
+import MetaInfo from '~/components/MetaInfo.vue'
 
 import Vue from 'vue'
 
@@ -18,4 +19,5 @@ Vue.directive('in-viewport', inViewportDirective)
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+  Vue.component('MetaInfo', MetaInfo)
 }

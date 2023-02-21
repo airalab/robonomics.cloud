@@ -11,13 +11,13 @@
             <g-link class="nav__link" to="/smart-home-survey" aria-label="visit smart home survey page">Survey “How ready are you for smart home?”</g-link>
           </li>
           <li class="nav__item">
-            <g-link  class="nav__link link-with-icon" to="/" aria-label="see how you can connect us">How to connect”</g-link>
+            <g-link  class="nav__link link-with-icon" to="https://wiki.robonomics.network/docs/robonomics-smart-home-overview" aria-label="see how you can connect us">How to connect”</g-link>
           </li>
           <li class="nav__item">
-            <g-link class="nav__link link-with-icon" to="/" aria-label="see web application">Web application</g-link>
+            <g-link class="nav__link link-with-icon" to="https://dapp.robonomics.network/#/" aria-label="see web application">Web application</g-link>
           </li>
           <li class="nav__item">
-            <g-link class="nav__link link-with-icon" to="/" aria-label="check our online courses">Online course</g-link>
+            <g-link class="nav__link link-with-icon" to="https://robonomics.academy/en/online-courses/smart-home-course/" aria-label="check our online courses">Online course</g-link>
           </li>
         </ul>
       </nav>

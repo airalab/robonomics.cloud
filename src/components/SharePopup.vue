@@ -6,13 +6,13 @@
       <button class="modal__close-btn" @click="$emit('closeModal')" aria-label="close share popup"></button>
       <h3>Share the results to your social media!</h3>
 
-      <button class="share-facebook share-social__btn">
+      <g-link :to="facebookLink" class="share-facebook share-social__btn">
         Facebook
-      </button>
+      </g-link>
 
-      <button class="share-twitter  share-social__btn">
+      <g-link :to="twitterLink" class="share-twitter  share-social__btn">
         Twitter
-      </button>
+      </g-link>
 
     </div>
   </div>
@@ -21,20 +21,21 @@
 <script>
 export default {
 
-  methods: {
-    shareOnFacebook() {
-      const navUrl =
-      'https://www.facebook.com/sharer/sharer.php?u=' +
-      'robonomics.cloud';
-      window.open(navUrl, '_blank');
-    },
-
-    shareOnTwitter() {
-      const navUrl =
-        'https://twitter.com/intent/tweet?text=' +
-        'https://github.com/knoldus/angular-facebook-twitter.git';
-        window.open(navUrl, '_blank');
+  data() {
+    return {
+      facebookLink: '',
+      twitterLink: ''
     }
+  },
+
+  created() {
+
+    const link = 'https://robonomics.cloud/smart-home-survey';
+    const msg = 'Hey, I took this survey and found out how much i know about smart home!'
+
+    this.facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${link}&t=${msg}`;
+
+    this.twitterLink = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=robonomics,iot`;
   }
 
 }

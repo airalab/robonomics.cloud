@@ -21,9 +21,18 @@
 
 .animate-inside.in-viewport > *, .animate-inside-fast.in-viewport > * {
 
-		animation-name: FadeIn, FloatYUp;
+		animation-name: FadeIn;
 		animation-timing-function: linear;
 		animation-delay: 0.5s;
+		animation-fill-mode: forwards;
+
+		animation-duration: 0.5s;
+	}
+
+	.animate-inside-slide.in-viewport > * {
+
+		animation-name: ScaleMove;
+		animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
 		animation-fill-mode: forwards;
 
 		animation-duration: 0.5s;
@@ -230,3 +239,16 @@
      stroke-dashoffset: 0;
    }
  }
+
+
+@keyframes ScaleMove {
+	0% {
+		transform: scaleY(0.5) translate(0, 30px);
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+		transform: scaleY(1) translate(0, 0);
+	}
+}

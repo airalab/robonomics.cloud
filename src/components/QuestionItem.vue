@@ -1,5 +1,5 @@
 <template>
-  <div class="survey__item grid grid-2">
+  <div class="survey__item grid grid-2 animate-inside-slide in-viewport" v-in-viewport.once>
     <h3> {{ question }} </h3>
     <div class="survey__wrapper">
       <button 
