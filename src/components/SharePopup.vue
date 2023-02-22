@@ -7,12 +7,15 @@
       <h3>Share the results to your social media!</h3>
 
       <g-link :to="facebookLink" class="share-facebook share-social__btn">
+        <font-awesome-icon class="icon" icon="fa-brands fa-facebook" />
         Share on Facebook
       </g-link>
 
       <g-link :to="twitterLink" class="share-twitter  share-social__btn">
-        Share on Twitter
+        <font-awesome-icon class="icon" icon="fa-brands fa-twitter" />
+        Share on Twitter       
       </g-link>
+
 
     </div>
   </div>
@@ -68,12 +71,16 @@ export default {
   }
 
   .share-social__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: calc(var(--space) * 0.5) var(--space);
     color: var(--color-light);
     font-size: calc(var(--base-font-size) * 1.3);
     font-weight: 600;
     box-shadow: 6px 6px 0 var(--color-light);
     transition: box-shadow 0.33s ease-in-out, color 0.33s ease-in-out;
+    text-align: center;
   }
 
   .share-social__btn:hover {
@@ -88,6 +95,10 @@ export default {
 
   .share-twitter {
     background-color: #1DA1F2;
+  }
+
+  .icon {
+    margin-right: calc(var(--space) * 0.5);
   }
 
 </style>
