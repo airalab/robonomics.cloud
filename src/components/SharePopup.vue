@@ -6,13 +6,39 @@
       <button class="modal__close-btn" @click="$emit('closeModal')" aria-label="close share popup"></button>
       <h3>Share the results to your social media!</h3>
 
+      <!-- <ShareNetwork
+        class="share-facebook share-social__btn"
+        network="facebook"
+        :url="`https://www.facebook.com/dialog/share?
+            app_id=2432719273556839
+            &display=popup
+            &href=${encodeURIComponent(link)}
+            &redirect_uri=$${encodeURIComponent(redirect)}`"
+        title="Hey, I took this survey and found out how much i know about smart home"
+        :description="result.title + '' + result.text"
+        hashtags="robonomics,iot"
+      >
+        Share on Facebook
+       </ShareNetwork> -->
+
       <g-link :to="facebookLink" class="share-facebook share-social__btn">
-        Facebook
+        Share on Facebook
       </g-link>
 
-      <g-link :to="twitterLink" class="share-twitter  share-social__btn">
+      <ShareNetwork
+        class="share-twitter share-social__btn"
+        network="twitter"
+        url="https://robonomics.cloud/smart-home-survey"
+        title="Hey, I took this survey and found out how much i know about smart home!"
+        :description="result.title + '' + result.text"
+        hashtags="robonomics,iot"
+      >
+        Share on Twitter
+      </ShareNetwork>
+
+      <!-- <g-link :to="twitterLink" class="share-twitter  share-social__btn">
         Twitter
-      </g-link>
+      </g-link> -->
 
     </div>
   </div>
@@ -21,21 +47,35 @@
 <script>
 export default {
 
+  props: {
+    result: {
+      type: Object
+    },
+
+    url: {
+      type: String,
+      default: ''
+    }
+    
+  },
+
   data() {
     return {
       facebookLink: '',
-      twitterLink: ''
+      twitterLink: '',
     }
   },
 
   created() {
 
-    const link = 'https://robonomics.cloud/smart-home-survey';
     const msg = 'Hey, I took this survey and found out how much i know about smart home!'
 
-    this.facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${link}&t=${msg}`;
+    this.facebookLink = `https://www.facebook.com/dialog/share?
+          app_id=2432719273556839
+          &href=https://robonomics.cloud/${this.url}`;
+    
+    this.twitterLink = `http://twitter.com/share?&url=${this.url}&text=${msg}&hashtags=robonomics,iot`;
 
-    this.twitterLink = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=robonomics,iot`;
   }
 
 }

@@ -65,11 +65,12 @@
       </div>
 
       <div class="survey-results__actions layout" v-if="isResultsShown">
+        <!-- <div class="survey-results__actions layout"> -->
         <div class="share">
           <button disabled @click="showSharePopup = true" class="share__btn">Share</button>
         </div>
 
-        <SharePopup :class="{'active': showSharePopup}" @closeModal="closeModal" />
+        <SharePopup :class="{'active': showSharePopup}" @closeModal="closeModal" :result="result" :url="url" />
       </div>
 
 
@@ -102,9 +103,26 @@ export default {
         title: '',
       },
 
+      url: '',
+
       metaTitle: 'How ready are you for smart home?',
       metaDescription: 'Decentralized cloud over web3 technologies for Robotics and IoT.',
       metaImage: '/OG/robonomics_cloud_survey.jpg'
+    }
+  },
+
+  watch: {
+    isResultsShown(curr, old) {
+      if(curr) {
+        this.$router.replace({
+          ...this.$route,
+          query: {
+            result: 'you did great yay',
+          },
+        })
+
+        this.url = this.$route.fullPath;
+      }
     }
   },
 

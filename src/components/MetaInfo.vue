@@ -39,7 +39,12 @@ export default {
       }
     },
     url(){
-      return this.$static.metadata.siteUrl + this.$route.fullPath
+       if (this.$route.query.result) {
+        return this.$static.metadata.siteUrl + this.$route.path
+       } else {
+        return this.$static.metadata.siteUrl + this.$route.fullPath
+       }
+      
     },
   },
 
@@ -56,11 +61,12 @@ export default {
   },
 
   metaInfo() {
-    const title =  this.metaTitle + ' / ' + this.$static.metadata.siteName;
+    const title = this.metaTitle + ' / ' + this.$static.metadata.siteName;
+    const mainTitle = this.pageTitle + ' / ' + this.$static.metadata.siteName;
     const description = this.metaDescription;
     const image = this.image;
     return {
-      title: title,
+      title: mainTitle,
       htmlAttrs: {
         lang: 'en',
         amp: true
@@ -91,6 +97,14 @@ export default {
     this.metaTitle = this.pageTitle;
     this.metaDescription = this.pageDescription;
     this.metaImage = this.pageImage;
+
+    if(this.$route.query.result) {
+      this.metaTitle = 'I know that much about smart home!';
+      this.metaDescription = 'Wonder how much you know...';
+      this.metaImage = '/OG/result-test.png';
+    }
+
+
   }
 };
 </script>

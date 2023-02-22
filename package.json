@@ -12,6 +12,7 @@
     "gridsome": "^0.7.0",
     "gridsome-plugin-google-sheets-post": "^2.0.1",
     "vue-in-viewport-directive": "^2.0.2",
+    "vue-social-sharing": "^3.0.9",
     "vueinview": "^1.0.7"
   },
   "overrides": {
