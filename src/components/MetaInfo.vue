@@ -89,7 +89,7 @@ export default {
 
 
     if (this.redirect) {
-      this.$router.push('/smart-home-survey') 
+      window.location.href = 'https://robonomics.cloud/smart-home-survey/'
     }
 
   }
