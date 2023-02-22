@@ -44,18 +44,6 @@ export default {
     },
   },
 
-  watch: {
-    $props: {
-      handler() {
-        this.metaTitle = this.pageTitle;
-        this.metaDescription = this.pageDescription;
-        this.metaImage = this.pageImage;
-      },
-      deep: true,
-      immediate: true,
-    },
-  },
-
   metaInfo() {
     const title = this.metaTitle + ' / ' + this.$static.metadata.siteName;
     const mainTitle = this.pageTitle + ' / ' + this.$static.metadata.siteName;

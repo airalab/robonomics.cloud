@@ -28,7 +28,7 @@
       <ShareNetwork
         class="share-twitter share-social__btn"
         network="twitter"
-        url="https://robonomics.cloud/smart-home-survey"
+        :url="`https://robonomics.cloud/${url}`"
         title="Hey, I took this survey and found out how much i know about smart home!"
         :description="result.title + '' + result.text"
         hashtags="robonomics,iot"
