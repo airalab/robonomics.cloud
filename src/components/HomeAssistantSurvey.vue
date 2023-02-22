@@ -66,7 +66,6 @@
       </div>
 
       <div class="survey-results__actions layout" v-if="isResultsShown">
-        <!-- <div class="survey-results__actions layout"> -->
         <div class="share">
           <button disabled @click="showSharePopup = true" class="share__btn">Share</button>
         </div>
@@ -185,7 +184,7 @@ export default {
 
     closeModal() {
       this.showSharePopup = false
-    }
+    },
   },
 
 }
