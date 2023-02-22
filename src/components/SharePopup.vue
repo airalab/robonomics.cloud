@@ -6,39 +6,13 @@
       <button class="modal__close-btn" @click="$emit('closeModal')" aria-label="close share popup"></button>
       <h3>Share the results to your social media!</h3>
 
-      <!-- <ShareNetwork
-        class="share-facebook share-social__btn"
-        network="facebook"
-        :url="`https://www.facebook.com/dialog/share?
-            app_id=2432719273556839
-            &display=popup
-            &href=${encodeURIComponent(link)}
-            &redirect_uri=$${encodeURIComponent(redirect)}`"
-        title="Hey, I took this survey and found out how much i know about smart home"
-        :description="result.title + '' + result.text"
-        hashtags="robonomics,iot"
-      >
-        Share on Facebook
-       </ShareNetwork> -->
-
       <g-link :to="facebookLink" class="share-facebook share-social__btn">
         Share on Facebook
       </g-link>
 
-      <ShareNetwork
-        class="share-twitter share-social__btn"
-        network="twitter"
-        :url="`https://robonomics.cloud/${url}`"
-        title="Hey, I took this survey and found out how much i know about smart home!"
-        :description="result.title + '' + result.text"
-        hashtags="robonomics,iot"
-      >
+      <g-link :to="twitterLink" class="share-twitter  share-social__btn">
         Share on Twitter
-      </ShareNetwork>
-
-      <!-- <g-link :to="twitterLink" class="share-twitter  share-social__btn">
-        Twitter
-      </g-link> -->
+      </g-link>
 
     </div>
   </div>
@@ -51,11 +25,6 @@ export default {
     result: {
       type: Object
     },
-
-    url: {
-      type: String,
-      default: ''
-    }
     
   },
 
@@ -63,12 +32,21 @@ export default {
     return {
       facebookLink: '',
       twitterLink: '',
+      url: '',
     }
   },
 
   created() {
 
     const msg = 'Hey, I took this survey and found out how much i know about smart home!'
+
+    if(this.result.title === 'Great news!') {
+      this.url = 'https://robonomics.cloud/smart-home-survey/success'
+    } else if (this.result.title === 'Hmm…') {
+      this.url = 'https://robonomics.cloud/smart-home-survey/medium'
+    } else {
+      this.url = 'https://robonomics.cloud/smart-home-survey/low'
+    }
 
     this.facebookLink = `https://www.facebook.com/dialog/share?
           app_id=2432719273556839

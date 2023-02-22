@@ -11,6 +11,23 @@ module.exports = function (api) {
   })
 
   api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
+    createPage({
+      path: '/smart-home-survey/success',
+        component: './src/templates/GreatResult.vue'
+      }
+    ),
+
+    createPage({
+      path: '/smart-home-survey/medium',
+        component: './src/templates/MediumResult.vue'
+      }
+    ),
+
+    createPage({
+      path: '/smart-home-survey/low',
+        component: './src/templates/LowResult.vue'
+      }
+    )
+      
   })
 }

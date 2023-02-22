@@ -18,14 +18,15 @@ export default {
       pageImage: { type: String, default: '' },
       pageImageWidth: { type: String, default: '1280' },
       pageImageHeight: { type: String, default: '765' },
-      pageLang: {type: String, default: 'en'}
+      pageLang: {type: String, default: 'en'},
+      redirect: {type: Boolean, default: false}
   },
 
   data() {
     return {
       metaTitle: '',
       metaDescription: '',
-      metaImage: ''
+      metaImage: '',
     }
   },
 
@@ -55,7 +56,7 @@ export default {
         lang: 'en',
         amp: true
       },
-      meta: [
+      meta: [        
         { key: 'description', name: 'description', content: description },
         // Some Open Graph Tags
         { property: "fb:app_id", content: "2432719273556839" },
@@ -80,16 +81,16 @@ export default {
   },
 
   created() {
+
     this.metaTitle = this.pageTitle;
     this.metaDescription = this.pageDescription;
     this.metaImage = this.pageImage;
 
-    if(this.$route.query.result) {
-      this.metaTitle = 'I know that much about smart home!';
-      this.metaDescription = 'Wonder how much you know...';
-      this.metaImage = '/OG/result-test.png';
-    }
 
+
+    if (this.redirect) {
+      this.$router.push('/smart-home-survey') 
+    }
 
   }
 };
