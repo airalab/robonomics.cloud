@@ -41,18 +41,18 @@ export default {
     const msg = 'Hey, I took this survey and found out how much i know about smart home!'
 
     if(this.result.title === 'Great news!') {
-      this.url = 'https://robonomics.cloud/smart-home-survey/success'
+      this.url = 'smart-home-survey/success'
     } else if (this.result.title === 'Hmm…') {
-      this.url = 'https://robonomics.cloud/smart-home-survey/medium'
+      this.url = 'smart-home-survey/medium'
     } else {
-      this.url = 'https://robonomics.cloud/smart-home-survey/low'
+      this.url = 'smart-home-survey/low'
     }
 
     this.facebookLink = `https://www.facebook.com/dialog/share?
           app_id=2432719273556839
           &href=https://robonomics.cloud/${this.url}`;
     
-    this.twitterLink = `http://twitter.com/share?&url=${this.url}&text=${msg}&hashtags=robonomics,iot`;
+    this.twitterLink = `http://twitter.com/share?&url=https://robonomics.cloud/${this.url}&text=${msg}&hashtags=robonomics,iot`;
 
   }
 
