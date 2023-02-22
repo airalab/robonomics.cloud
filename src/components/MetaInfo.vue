@@ -86,12 +86,12 @@ export default {
     this.metaDescription = this.pageDescription;
     this.metaImage = this.pageImage;
 
+  },
 
-
+  mounted() {
     if (this.redirect) {
       window.location.href = 'https://robonomics.cloud/smart-home-survey/'
     }
-
   }
 };
 </script>
