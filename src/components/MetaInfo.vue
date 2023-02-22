@@ -70,6 +70,8 @@ export default {
       meta: [
         { key: 'description', name: 'description', content: description },
         // Some Open Graph Tags
+        { property: "fb:app_id", content: "2432719273556839" },
+        { property: "fb:smart_publish:robots", content: "noauto" },
         { property: "og:type", content: "website" },
         { property: "og:site_name", content: this.$static.metadata.siteName },
         { property: "og:title", content: title },

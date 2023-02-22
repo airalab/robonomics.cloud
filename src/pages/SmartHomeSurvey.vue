@@ -67,7 +67,7 @@
       <div class="survey-results__actions layout" v-if="isResultsShown">
         <!-- <div class="survey-results__actions layout"> -->
         <div class="share">
-          <button disabled @click="showSharePopup = true" class="share__btn">Share</button>
+          <button disabeld @click="showSharePopup = true" class="share__btn">Share</button>
         </div>
 
         <SharePopup :class="{'active': showSharePopup}" @closeModal="closeModal" :result="result" :url="url" />
