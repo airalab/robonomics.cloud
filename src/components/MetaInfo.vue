@@ -39,11 +39,7 @@ export default {
       }
     },
     url(){
-       if (this.$route.query.result) {
-        return this.$static.metadata.siteUrl + this.$route.path
-       } else {
-        return this.$static.metadata.siteUrl + this.$route.fullPath
-       }
+      return this.$static.metadata.siteUrl + this.$route.fullPath
       
     },
   },
