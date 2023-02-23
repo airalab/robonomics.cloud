@@ -67,7 +67,7 @@
 
       <div class="survey-results__actions layout" v-if="isResultsShown">
         <div class="share">
-          <button disabled @click="showSharePopup = true" class="share__btn">Share</button>
+          <button @click="showSharePopup = true" class="share__btn">Share</button>
         </div>
 
         <SharePopup :class="{'active': showSharePopup}" @closeModal="closeModal" :result="result" />
@@ -135,7 +135,7 @@ export default {
     },
 
     progressBarPercentage() {
-      return ( 100 * ((this.questions.length + 1) * (this.questionIndex + 1)) / 100)
+      return this.questionIndex === this.questions.length ? 100 : ( 100 * ((this.questions.length + 1) * (this.questionIndex + 1)) / 100)
 
     }
   },
