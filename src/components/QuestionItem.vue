@@ -40,6 +40,10 @@ export default {
     font-size: calc(var(--base-font-size) * 2.2)
   }
 
+  .survey__item {
+    margin-top: calc(var(--space) * 2.3);
+  }
+
   .survey__wrapper {
     display: flex;
     flex-direction: column;

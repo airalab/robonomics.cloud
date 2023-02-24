@@ -21,6 +21,24 @@
       :data-gsp-data="result.response" 
     />
 
+    <input
+      type="hidden" 
+      data-gsp-name="Result Title" 
+      :data-gsp-data="score.title" 
+    >
+
+    <input
+      type="hidden" 
+      data-gsp-name="Result Text" 
+      :data-gsp-data="score.plainText" 
+    >
+
+    <input
+      type="hidden" 
+      data-gsp-name="Result Pic" 
+      :data-gsp-data="score.emailPic" 
+    >
+
     <div class="google-sheets-form__actions">
       <button @click="onSubmit" v-if="result !== 'success'" class="button large" :class="{'wait': result === 'wait'}"  :disabled="result === 'error' || result === 'wait'">
         <span class="button-default" v-if="result !== 'wait'"></span>
@@ -33,7 +51,7 @@
     </div>
 
     <span>or</span>
-    <button @click="onSubmit">
+    <button @click="onSubmit('no-email')">
       Continue without email
     </button>
 
@@ -50,6 +68,9 @@ export default {
   props: {
     results: {
       type: Array
+    },
+    score: {
+      type: Object
     }
   },
     
@@ -65,7 +86,11 @@ export default {
   },
 
   methods: {
-    onSubmit() {
+    onSubmit(noEmail) {
+
+      if(noEmail === 'no-email') {
+        this.data_email = '';
+      }
 
       this.interval = setInterval(() => {
         this.result = this.$response
@@ -98,7 +123,6 @@ export default {
         response: this.results[i]
       })
     }
-
   },
 }
 </script>

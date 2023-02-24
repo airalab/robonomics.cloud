@@ -47,7 +47,7 @@
             Almost there...
           </h3>
           <div class="survey-get-results__form">
-            <QuizForm @showResults="showResults" :results="responses"/>
+            <QuizForm @showResults="showResults" :results="responses" :score ="result"/>
           </div>
         </div>
       </div>
@@ -56,7 +56,8 @@
       <!-- results -->
       <div class="survey-results layout animate-inside-fast in-viewport" v-in-viewport.once v-if="isResultsShown">
         <div class="grid grid-2">
-          <div class="survey-results__image" width="50%">
+          <div class="survey-results__image" >
+            <g-image :src="require(`!!assets-loader!@/assets/images/${result.img}`)" :alt="result.title"/>
           </div>
           <div class="survey-results__text">
             <h3>{{ result.title }}</h3>
@@ -67,7 +68,7 @@
 
       <div class="survey-results__actions layout" v-if="isResultsShown">
         <div class="share">
-          <button disabled @click="showSharePopup = true" class="share__btn">Share</button>
+          <button @click="showSharePopup = true" class="share__btn">Share</button>
         </div>
 
         <SharePopup :class="{'active': showSharePopup}" @closeModal="closeModal" :result="result" />
@@ -123,6 +124,8 @@ export default {
       result: {
         text: '',
         title: '',
+        plainText: '',
+        emailPic: ''
       },
 
       url: '',
@@ -173,12 +176,21 @@ export default {
       if(countOne > countThree && countOne > countTwo) {
         this.result.title = `Great news!`
         this.result.text = `<span class="text-with-bg">You're all set for a smart home</span>. Just be careful with which cloud service you choose to centralize your devices and data. Otherwise, you may find your fridge ordering milk without your consent, and your vacuum secretly plotting against you.`
+        this.result.plainText = `You're all set for a smart home. Just be careful with which cloud service you choose to centralize your devices and data. Otherwise, you may find your fridge ordering milk without your consent, and your vacuum secretly plotting against you.`
+        this.result.img = 'survey_sh_success.png'
+        this.result.emailPic = 'https://static.robonomics.network/email/regular/robonomics-cloud-quiz-1/guy-smart-home-1.png';
       } else if (countTwo > countThree && countTwo > countOne || countTwo === countOne || countTwo === countThree) {
         this.result.title = `Hmm…`
         this.result.text = `<span class="text-with-bg">It looks like a smart home might not be your cup of tea</span>. But hey, who needs automation when you've got hands to switch things on and off, right? And don't worry, you can still enjoy modern conveniences in your home by incorporating a few smart devices to make life easier.`
+        this.result.plainText = `It looks like a smart home might not be your cup of tea. But hey, who needs automation when you've got hands to switch things on and off, right? And don't worry, you can still enjoy modern conveniences in your home by incorporating a few smart devices to make life easier.`
+        this.result.img = 'survey_sh_medium.png'
+        this.result.emailPic = 'https://static.robonomics.network/email/regular/robonomics-cloud-quiz-1/guy-smart-home-2.png';
       } else {
         this.result.title = `Uh-oh!`
         this.result.text = `<span class="text-with-bg">It seems like a smart home just isn't your jam</span>. That's okay, you can always rely on carrier pigeons to get messages across, and candles to light up your home.`
+        this.result.plainText = `It seems like a smart home just isn't your jam. That's okay, you can always rely on carrier pigeons to get messages across, and candles to light up your home.`
+        this.result.img = 'survey_sh_low.png'
+        this.result.emailPic = 'https://static.robonomics.network/email/regular/robonomics-cloud-quiz-1/guy-smart-home-3.png';
       }
     },
 
@@ -242,8 +254,10 @@ export default {
 
   .survey-results .grid {
     padding: var(--space);
-    min-height: 450px;
+    min-height: 520px;
     background-color: var(--color-light);
+    align-items: center;
+    justify-items: center;
   }
 
   .survey-results__text h3,
@@ -253,6 +267,11 @@ export default {
   .survey-results__text p {
     font-size: calc(var(--base-font-size) * 1.5);
     font-weight: 400;
+  }
+
+  .survey-results__image {
+    max-width: 425px;
+    width: 100%;
   }
 
   .survey-results__actions {
@@ -271,6 +290,12 @@ export default {
     background-repeat: no-repeat;
     background-size: 50px 50px;
     background-position: right center;
+  }
+
+  @media screen and (max-width: 1090px) {
+    .survey .grid-2 {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media screen and (max-width: 950px) {

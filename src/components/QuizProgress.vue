@@ -27,7 +27,7 @@ export default {
 <style scoped>
 
   .quiz-progress {
-    margin-bottom: calc(var(--space) * 2.3);
+    margin-bottom: 0;
   }
 
   h2 {
