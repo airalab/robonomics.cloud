@@ -228,6 +228,10 @@ export default {
     opacity: 0.7;
   }
 
+  .survey-get-results {
+    overflow: hidden;
+  }
+
   .survey-get-results h3 {
     color: var(--color-light);
   }
