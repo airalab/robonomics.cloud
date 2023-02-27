@@ -53,6 +53,11 @@ export default {
   },
   methods: {
     onSubmit() {
+
+      if(!this.data_email) {
+        return
+      }
+
       this.interval = setInterval(() => {
         this.result = this.$response
         console.log(this.$response)
@@ -60,6 +65,7 @@ export default {
       if (this.$response === 'success' || this.$response === 'error') {
         clearInterval(this.interval)
       }
+      
     },
   },
   watch: {

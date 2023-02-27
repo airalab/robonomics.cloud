@@ -250,8 +250,8 @@ export default {
   }
 
   .text-bubble p {
-    max-width: 277px;
-    padding-left: 25px;
+    max-width: 310px;
+    padding-left: 52px;
     font-weight: 500;
     color: var(--color-light);
     font-style: italic;
@@ -421,8 +421,9 @@ export default {
     }
     
     .text-bubble p {
+      max-width: 285px;
       padding: 20px;
-      padding-left: 60px;
+      padding-left: 45px;
     }
 
     .subscan {
