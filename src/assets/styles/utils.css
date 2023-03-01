@@ -19,6 +19,10 @@
   align-items: center;
 }
 
+.link-with-arrow > * {
+  opacity: 0;
+}
+
 .link-with-arrow a,
 .link-with-arrow button {
   display: inline-block;
