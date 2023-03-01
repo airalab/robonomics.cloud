@@ -8,7 +8,6 @@
 .show {
 	visibility: hidden;
 	opacity: 0;
-  
 	animation: FadeIn 0.1s var(--animation-bump) 0.1s forwards;
   }
 
@@ -41,10 +40,10 @@
 	.animate-inside-float-scale.in-viewport > * {
 
 		animation-name: rotateInDownLeft;
-		animation-timing-function: linear;
+		animation-timing-function: ease-in-out;
 		animation-fill-mode: forwards;
 		animation-delay: 0.5s;
-		animation-duration: 0.5s;
+		animation-duration: 2s;
 	}
 	
 	.animate-inside-bounce.in-viewport > * {
@@ -299,13 +298,11 @@
 
 @keyframes rotateInDownLeft {
   0% {
-    transform-origin: left bottom;
-    transform: rotate(-90deg);
+    transform: translateX(1000px);
     opacity: 0;
   }
   100% {
-    transform-origin: left bottom;
-    transform: rotate(0);
+    transform: translateX(0px);
     opacity: 1;
   }
 }
