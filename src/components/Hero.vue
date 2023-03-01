@@ -21,24 +21,27 @@ export default {
 
   .hero {
     position: relative;
-    margin-top: -80px;
-    min-height: 380px;
+    margin-bottom: calc(var(--space) * 5);
+    min-height: 410px;
     background-color: var(--color-blue);
     background-image: url('../assets/images/blue__houses.png');
     background-repeat: no-repeat;
     /* background-position: contain; */
-    background-size: 929px 380px;
+    background-size: 930px 410px;
     border-bottom: 5px solid var(--color-green);
   }
 
   h1 {
     padding-top: calc(var(--space) * 2);
     margin-bottom: var(--space-text);
+    font-size: calc(var(--base-font-size)*2.8);
+
   }
 
   p {
-    max-width: 610px;
-    color: var(--color-light)
+    max-width: 805px;
+    color: var(--color-light);
+    font-size: calc(var(--base-font-size) * 1.6);
   }
 
   /* .hero .layout {
@@ -46,15 +49,13 @@ export default {
     z-index: 250;
   } */
 
-  @media screen and (max-width: 1050px) {
-    .hero {
-      margin-bottom: calc(var(--space) * 4);
-    }
+  .main-title sub {
+    letter-spacing: 0;
   }
 
   @media screen and (max-width: 950px) {
     .hero {
-      min-height: 300px;
+      min-height: 365px;
     }
 
     .hero .layout {
@@ -68,6 +69,18 @@ export default {
     .hero {
       min-height: 370px;
     }
+
+
+  h1 {
+    font-size: calc(var(--base-font-size)*1.6);
+
+  }
+
+  p {
+    max-width: 805px;
+    color: var(--color-light);
+    font-size: calc(var(--base-font-size) * 1.2);
+  }
   }
 
 </style>

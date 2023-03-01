@@ -9,7 +9,7 @@
     />
 
     <!-- polkadot ecosystem -->
-    <section class="polkadot-ecosystem">
+    <section class="polkadot-ecosystem animate-inside in-viewport" v-in-viewport.once>
       <div class="layout">
         <h2>Polkadot ecosystem</h2>
         <p>Robonomics launched its own parachain, a specialized blockchain, in Kusama network. It allows to scale up launching and sending a telemetry of IoT devices by performing transactions within network.</p>
@@ -29,21 +29,29 @@
             </div>
           </div>
 
-          <div class="text-bubble">
-            <p> During 2022, the Robonomics parachain in Kusama was used in a dozen R&D projects and processed more than 4 million transactions for IoT devices in total.</p>
+
+          <div class="text-bubble__wrapper animate-inside-float-scale in-viewport" v-in-viewport.once>
+
+            <div class="text-bubble">
+              <p> During 2022, the Robonomics parachain in Kusama was used in a dozen R&D projects and processed more than 4 million transactions for IoT devices in total.</p>
+            </div>
+
           </div>
+
+
+
         </div>
       </div>
     </section>
 
     <!-- No third parties -->
-    <section class="no-third-parties">
+    <section class="no-third-parties animate-inside in-viewport" v-in-viewport.once>
       <div class="layout wrapper">
         <div>
           <h2>No third parties</h2>
           <p>With RWS you will have tha ability to control Smart home remotely without third party corporations, own your data, do not share with the vendor, escape centralized cloud server shutdowns.</p>
         </div>
-        <div class="link-with-arrow column link-with-arrow--mw">
+        <div class="link-with-arrow column link-with-arrow--mw animate-inside-left in-viewport" v-in-viewport.once >
           <button @click="showModal = true" aria-label="open rws vs aws popup">
             RWS vs AWS specification&nbsp;table
           </button>
@@ -52,7 +60,7 @@
     </section>
 
     <!-- join our progress -->
-    <section class="join-our-progress section-purple">
+    <section class="join-our-progress section-purple animate-inside in-viewport" v-in-viewport.once>
       <div class="layout">
         <h2>Join our progress</h2>
 
@@ -65,7 +73,7 @@
               :percentage="progress.percentage"
             />
           </div>
-          <g-link  class="join-our-progress__survey__link" to="/smart-home-survey" aria-label="take our survey">
+          <g-link class="join-our-progress__survey__link animate-inside-swing" to="/smart-home-survey" aria-label="take our survey" v-in-viewport>
             <div class="title-with-bg">
               <span>How ready are you for smart home?</span>
             </div>
@@ -78,11 +86,11 @@
 
     <!-- decentralized web app -->
 
-    <section class="dapp section-purple">
+    <section class="dapp section-purple animate-inside in-viewport" v-in-viewport.once>
       <div class="layout">
         <h2>Decentralized web app </h2>
         <p>
-          We are building decentralized application for the control of home IoT infrastructure with Robonomics and Home Assistant.
+          We are building decentralized application for the&nbsp;control&nbsp;of&nbsp;home IoT infrastructure with Robonomics and Home Assistant.
         </p>
         <div class="wrapper"> 
           <g-image src="~/assets/images/computer.png" alt="screen"/>
@@ -93,7 +101,7 @@
               <li>Remote control with encryption</li>
               <li>User Management & Access Control</li>
             </ul>
-            <div class="link-with-arrow">
+            <div class="link-with-arrow animate-inside-left in-viewport" v-in-viewport.once>
               <g-link to="https://dapp.robonomics.network/#/" aria-label="visit our dapp">
                 dapp.robonomics.network
               </g-link>
@@ -104,11 +112,11 @@
     </section>
 
     <!-- how to connect Home Assistant -->
-    <section class="home-assistant section-purple">
+    <section class="home-assistant section-purple animate-inside in-viewport" v-in-viewport.once>
       <div class="layout">
         <h2>How to connect Home Assistant</h2>
         <p>Home Assistant is an open-source home automation system that provides a centralized hub for controlling smart devices in your home network. By integrating with RWS, a decentralized cloud service, you can enhance the functionality and security of your smart home.</p>
-        <div class="link-with-arrow">
+        <div class="link-with-arrow animate-inside-left in-viewport" v-in-viewport.once>
           <g-link to="https://wiki.robonomics.network/docs/robonomics-smart-home-overview" aria-label="check our wiki">
             Watch out the guide on Wiki
           </g-link>
@@ -117,7 +125,7 @@
     </section>
 
     <!-- dive deeper -->
-    <section class="dive-deep section-purple">
+    <section class="dive-deep section-purple animate-inside in-viewport" v-in-viewport.once>
       <div class="layout">
         <h2>Dive deeper</h2>
         <p>Take a <b>free online course</b> “Sovereign Smart Home” on Robonomics academy and get:</p>
@@ -126,7 +134,7 @@
           <li>Practical skills for setting up and connecting smart home equipment</li>
           <li>Basic skills for using the Robonomics parachain for IoT</li>
         </ul>
-        <div class="link-with-arrow">
+        <div class="link-with-arrow animate-inside-left in-viewport" v-in-viewport.once>
           <g-link to="https://robonomics.academy/en/online-courses/smart-home-course/" aria-label="visit our academy and check its courses">
             Start course now
           </g-link>
@@ -208,10 +216,6 @@ export default {
     position: relative;
   }
 
-  p {
-    max-width: 635px;
-  }
-
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -234,10 +238,14 @@ export default {
     justify-content: space-between;
   }
 
-  .text-bubble {
+  .text-bubble__wrapper {
     margin-top: 30px;
+    flex-shrink: 0;
     max-width: 421px;
     width: 100%;
+  }
+
+  .text-bubble {
     height: 376px;
     display: flex;
     align-items: center;
@@ -263,11 +271,23 @@ export default {
     align-self: end;
   }
 
+  .no-third-parties .link-with-arrow button {
+    background-size: contain;
+  }
+
+  .join-our-progress h2 {
+    margin-bottom: calc(var(--space) * 3);
+  }
+
+  .join-our-progress__our-progress {
+    width: 100%;
+  }
+
   .join-our-progress__survey__link {
     position: relative;
-    max-width: 472px;
+    max-width: 427px;
     width: 100%;
-    height: 418px;
+    height: 453px;
     align-self: center;
   }
 
@@ -288,12 +308,12 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    width: 104%;
-    height: 105%;
+    width: 100%;
+    height: 100%;
     background-image: url('../assets/images/girl.png');
     background-repeat: no-repeat;
-    background-position: right 3px bottom;
-    background-size: 330px 303px;
+    background-position: right bottom;
+    background-size: 269px 282px;
   }
 
   .join-our-progress__survey__link span {
@@ -330,6 +350,8 @@ export default {
   .dapp .wrapper img {
     display: block;
     align-self: end;
+    width: 100%;
+    max-width: 322px;
   }
 
   .dapp__content {
@@ -354,6 +376,15 @@ export default {
     flex-direction: column;
   }
 
+  .dapp p {
+    max-width: 655px;
+  }
+
+  .dive-deep p,
+  .home-assistant p  {
+    max-width: 755px;
+  }
+
   .home-assistant .link-with-arrow,
   .dive-deep .link-with-arrow,
   .dapp .link-with-arrow {
@@ -361,8 +392,9 @@ export default {
   }
 
   .dive-deep__list {
-    padding-left: calc(var(--space) * 2);
+    max-width: 728px;
   }
+
   .dive-deep__list li {
     font-weight: 300;
     font-size: calc(var(--base-font-size) * 1.2);
@@ -389,6 +421,10 @@ export default {
       align-self: unset;
     }
 
+    .no-third-parties .link-with-arrow button {
+      background-size: auto;
+    }
+
     .dapp .wrapper img {
       align-self: unset;
       margin-bottom: var(--space);
@@ -399,7 +435,6 @@ export default {
     }
 
     .dapp__list {
-      padding-left: 0;
       margin-bottom: 0;
     }
 
@@ -450,9 +485,7 @@ export default {
     }
 
     .join-our-progress__survey__link::after {
-      background-size: 311px 281px;
-      height: 100%;
-      width: 100%;
+      background-size: 261px 261px;
       z-index: 10;
     }
 

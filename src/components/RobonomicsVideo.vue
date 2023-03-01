@@ -1,7 +1,9 @@
 <template>
   <div class="robonomics-video" @click.prevent="playVideo" :class="{'playing': isVideoPlaying}">
-    <div class="overlay-video"></div>
-    <g-image src="~/assets/images/arrow.svg" aria-hidden="true" />
+    <div class="overlay-video">
+      <img src="../assets/images/video__cover.png" aria-hidden="true"/>
+    </div>
+    <g-image class="video-icon" src="~/assets/images/arrow.svg" aria-hidden="true" />
     <video ref="video" controls>
       <source src="https://crustipfs.art/ipfs/QmStCDsEHCYwVYvnDdmZBMnobPmrgZx3iJLm65b8XNzKQa" type="video/mp4" />
     </video>
@@ -27,6 +29,18 @@ export default {
         this.isVideoPlaying = false
       }
     }
+  },
+
+  mounted() {
+
+
+    // this.$refs.video.addEventListener('progress', (e) => {
+
+    //   if(this.$refs.video.readyState >= 3){
+    //     this.videoLoaded = true
+    //   }
+      
+    // });
   }
 
 }
@@ -35,10 +49,13 @@ export default {
 <style scoped>
   .robonomics-video {
     position: absolute;
+    /* width: 284px;
+    height: 241px; */
     width: 316px;
-    right: calc(var(--space) * 2);
+    height: 256px;
+    right: calc(var(--space) * 6);
     bottom: -80px;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   .overlay-video {
@@ -47,14 +64,20 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
+    border: 5px solid transparent;
     background-color: #13FF9C36;
+  }
+
+  .overlay-video img {
+    width: 100%;
+    height: 100%;
   }
 
   .playing .overlay-video{
     display: none;
   }
 
-  .robonomics-video img {
+  .robonomics-video .video-icon {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -67,19 +90,29 @@ export default {
 
   video {
     width: 100%;
+    height: 100%;
     border: 5px solid var(--color-green);
-    overflow: hidden;
+    /* overflow: hidden; */
+    object-fit: cover;
   }
 
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 960px) {
     .robonomics-video {
-      bottom: -100px;
+      bottom: -110px;
+      height: 230px;
     }
   }
 
+  @media screen and (max-width: 590px) {
+    .robonomics-video {
+      height: 217px;
+      right: 1rem;
+    }
+  }
+/* 
   @media screen and (max-width: 390px) {
     .robonomics-video {
      right: 1rem;
     }
-  }
+  } */
 </style>

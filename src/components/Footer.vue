@@ -79,13 +79,14 @@ export default {
   }
   
   .footer .layout {
+    max-width: 1400px;
     padding: calc(var(--space) * 2);
   }
 
   .contacts__wrapper {
     padding-top: 4rem;
     padding-bottom: 4rem;
-    padding-left: 11rem;
+    padding-left: 15rem;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -102,7 +103,11 @@ export default {
   }
 
   .contacts__item:not(:last-child) {
-    margin-right: 6rem;
+    margin-right: 4rem;
+  }
+
+  .contacts__item:not(:first-child) {
+    margin-right: 2rem;
   }
 
    .contacts__item svg path {
@@ -148,13 +153,14 @@ export default {
   }
   .discord .contacts__text {
     position: absolute;
-    top: -52px;
-    right: calc(100% - 266px);
+    top: -55px;
+    right: calc(100% + 54px);
   }
   .discord .decor-line {
     position: absolute;
     top: -38px;
-    left: calc(10% + 60px);
+    left: calc(10% - 62px);
+    transform: scaleX(-1);
   }
   .twitter .contacts__text {
     position: absolute;

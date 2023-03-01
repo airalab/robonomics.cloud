@@ -43,11 +43,11 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 h2, h3, h4, h5 {
-  line-height: 1.2;
+  line-height: 1.5;
   margin-bottom: var(--space-text);
   /* font-weight: 400; */
 }
@@ -85,7 +85,7 @@ ol li {
 p {
   font-size: calc(var(--base-font-size) * 1.2);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 a:not(.button):hover, .link:not(.button):hover {

@@ -21,7 +21,7 @@
 
 .animate-inside.in-viewport > *, .animate-inside-fast.in-viewport > * {
 
-		animation-name: FadeIn;
+		animation-name: FadeIn, FloatYUp;
 		animation-timing-function: linear;
 		animation-delay: 0.5s;
 		animation-fill-mode: forwards;
@@ -36,6 +36,43 @@
 		animation-fill-mode: forwards;
 
 		animation-duration: 0.5s;
+	}
+
+	.animate-inside-float-scale.in-viewport > * {
+
+		animation-name: rotateInDownLeft;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-delay: 0.5s;
+		animation-duration: 0.5s;
+	}
+	
+	.animate-inside-bounce.in-viewport > * {
+
+		animation-name: bounce;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: forwards;
+		animation-delay: 0.5s;
+		animation-duration: 2s;
+	}
+
+	.animate-inside-swing.in-viewport {
+
+		animation-name: swing;
+		animation-timing-function: ease;
+		animation-fill-mode: infinite;
+		animation-delay: 0.5s;
+		animation-duration: 1.5s;
+		transform-origin: top center;
+	}
+
+	.animate-inside-left.in-viewport > * {
+
+		animation-name: fade-in-left;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: infinite;
+		animation-delay: 0.7s;
+		animation-duration: 1.5s;
 	}
 
 
@@ -251,4 +288,61 @@
 		opacity: 1;
 		transform: scaleY(1) translate(0, 0);
 	}
+}
+
+@keyframes FloatYUp {
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes rotateInDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes bounce {
+  30% { transform: scale(1.2); }
+
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+
+  50% { transform: rotate(20deg) scale(1.2); }
+
+  70% { transform: rotate(0deg) scale(1.2); }
+
+  100% { transform: scale(1); }
+}
+
+
+@keyframes swing {
+	20% { transform: rotate(15deg); }	
+
+	40% { transform: rotate(-10deg); }
+
+	60% { transform: rotate(5deg); }	
+
+	80% { transform: rotate(-5deg); }	
+
+	100% { transform: rotate(0deg); }
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

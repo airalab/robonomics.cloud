@@ -1,5 +1,5 @@
 <template>
-  <div class="subscan__item">
+  <div class="subscan__item animate-inside-bounce in-viewport" v-in-viewport.once>
     <span>{{ amount }}</span>
     <h3>{{ title }}</h3>
   </div>

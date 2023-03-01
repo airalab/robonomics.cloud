@@ -33,12 +33,12 @@ export default {
 
 <style scoped>
   .menu {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    padding-top: 205px;
+    height: 600px;
+    padding-top: 135px;
     background-color: var(--color-menu-bg);
     opacity: 0;
     visibility: hidden;
@@ -89,6 +89,12 @@ export default {
   }
 
   @media screen and (max-width: 1060px) {
+
+    .menu {
+      position: fixed;
+      height: 100vh;
+    }
+
     .menu .layout {
       flex-direction: column;
       align-items: flex-start;

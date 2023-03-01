@@ -1,13 +1,11 @@
 <template>
   <header class="header" :class="{'header--active': isMenuOpen}">
-    <div class="layout">
-      <g-link to="/" class="header__wrapper">
-        <g-image alt="logo" src="~/assets/images/rws__logo.svg" width="70" />
-      </g-link>
-      <button :class="{'burger--active': isMenuOpen}" class="burger header__burger" aria-label="Open menu" @click="isMenuOpen = !isMenuOpen">
-        <span class="burger__line"></span>
-      </button>
-    </div>
+    <g-link to="/" class="header__wrapper">
+      <g-image alt="logo" src="~/assets/images/rws__logo.svg" width="70" />
+    </g-link>
+    <button :class="{'burger--active': isMenuOpen}" class="burger header__burger" aria-label="Open menu" @click="isMenuOpen = !isMenuOpen">
+      <span class="burger__line"></span>
+    </button>
 
     <!-- menu -->
     <Menu :class="{'menu--active': isMenuOpen}" />
@@ -35,7 +33,10 @@ export default {
 
   .header {
     position: relative;
-    padding: var(--space) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space);
     background-color: var(--color-blue);
   }
 
@@ -46,7 +47,9 @@ export default {
   .header .layout {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-self: flex-end;
+    justify-content: flex-end;
+    padding-bottom: 0;
   }
 
   .header__wrapper {
@@ -64,6 +67,7 @@ export default {
     position: relative;
     border: none;
     padding: 0;
+    margin-right: calc(var(--space) * 5);
     width: 78px;
     height: 31px;
     color: var(--color-light);
@@ -132,6 +136,13 @@ export default {
   .burger--active .burger__line {
     transform: scale(0);
     transition: transform 0.3s ease-in-out;
+  }
+
+
+  @media screen and (max-width: 1060px) {
+    .burger {
+      margin-right: 0;
+    }
   }
 
 </style>
