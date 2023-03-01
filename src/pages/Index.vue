@@ -255,6 +255,7 @@ export default {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    opacity: 0;
   }
 
   .text-bubble p {
