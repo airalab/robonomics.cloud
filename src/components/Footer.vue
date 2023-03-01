@@ -86,7 +86,7 @@ export default {
   .contacts__wrapper {
     padding-top: 4rem;
     padding-bottom: 4rem;
-    padding-left: 15rem;
+    padding-left: 18rem;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -106,8 +106,8 @@ export default {
     margin-right: 4rem;
   }
 
-  .contacts__item:not(:first-child) {
-    margin-right: 2rem;
+  .discord {
+    margin-right: 3rem !important;
   }
 
    .contacts__item svg path {
@@ -218,6 +218,10 @@ export default {
     .contacts__items {
       align-items: flex-start;
       margin-bottom: 2rem;
+    }
+
+    .contacts__item:not(:last-child) {
+      margin-right: 4rem !important;
     }
     .moveItems {
       transform: translateX(-10px)
