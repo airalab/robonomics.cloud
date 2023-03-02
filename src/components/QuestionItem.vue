@@ -91,4 +91,11 @@ export default {
     }
   }
 
+  @media screen and (max-width: 560px) {
+    h3 {
+      font-size: calc(var(--base-font-size) * 1.8) ;
+      text-align: left;
+    }
+  }
+
 </style>

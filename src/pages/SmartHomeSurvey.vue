@@ -15,11 +15,12 @@
       <!-- take survey -->
       <div class="survey__main layout" v-if="!showQuestion">
         <h2>How ready are you for&nbsp;smart&nbsp;home?</h2>
-        <div class="link-with-arrow white animate-inside-left-fast in-viewport" v-in-viewport.once>
-            <button @click="startSurvey" aria-label="start survey for smart home">
-              Take a  survey
+        <!-- <div class="link-with-arrow white"> -->
+            <button class="link-with-arrow white" @click="startSurvey" aria-label="start survey for smart home">
+              <span>Take a  survey</span>
+              <span class="arrow animate-inside-right-fast in-viewport" v-in-viewport.once aria-hidden="true"></span>
             </button>
-        </div>
+        <!-- </div> -->
       </div>
 
       <!-- questions -->

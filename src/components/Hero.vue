@@ -60,7 +60,6 @@ export default {
 
     .hero .layout {
       display: flex;
-      align-items: center;
       flex-direction: column;
     }
   }

@@ -37,13 +37,31 @@
 		animation-duration: 0.5s;
 	}
 
+	.animate-inside-rise.in-viewport {
+
+		animation-name: rise;
+		animation-timing-function: linear;
+		animation-fill-mode: ease-in-out;
+		animation-delay: 0.2;
+		animation-duration: 0.5s;
+	}
+
+	.animate-inside-rise-short.in-viewport  {
+
+		animation-name: rise-short;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-delay: 1;
+		animation-duration: 0.5s;
+	}
+
 	.animate-inside-float-scale.in-viewport > * {
 
 		animation-name: rotateInDownLeft;
 		animation-timing-function: ease-in-out;
 		animation-fill-mode: forwards;
 		animation-delay: 0.5s;
-		animation-duration: 2s;
+		animation-duration: 1s;
 	}
 	
 	.animate-inside-bounce.in-viewport > * {
@@ -65,7 +83,7 @@
 		transform-origin: top center;
 	}
 
-	.animate-inside-left.in-viewport > * {
+	.animate-inside-left.in-viewport {
 		animation-name: fade-in-left;
 		animation-timing-function: ease-in-out;
 		animation-fill-mode: forwards;
@@ -73,10 +91,27 @@
 		animation-duration: 1.5s;
 	}
 
-	.animate-inside-left-fast.in-viewport > * {
+	.animate-inside-left-fast.in-viewport {
 		animation-name: fade-in-left;
 		animation-timing-function: ease-in-out;
 		animation-fill-mode: forwards;
+		animation-delay: 0.3s;
+		animation-duration: 0.8s;
+	}
+
+
+	.animate-inside-right-fast.in-viewport {
+		animation-name: fade-in-right;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: forwards;
+		animation-delay: 0.3s;
+		animation-duration: 0.8s;
+	}
+
+	.animate-inside-zoom.in-viewport {
+		animation-name: zoom;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: infinite;
 		animation-delay: 0.3s;
 		animation-duration: 0.8s;
 	}
@@ -305,7 +340,7 @@
 
 @keyframes rotateInDownLeft {
   0% {
-    transform: translateX(1000px);
+    transform: translateX(-400px);
     opacity: 0;
   }
   100% {
@@ -343,10 +378,56 @@
 @keyframes fade-in-left {
   0% {
     opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
     transform: translateX(-20px);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rise-short {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

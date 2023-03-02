@@ -100,19 +100,21 @@ export default {
     .robonomics-video {
       bottom: -110px;
       height: 230px;
+      right: 1rem;
     }
   }
 
   @media screen and (max-width: 590px) {
     .robonomics-video {
-      height: 217px;
-      right: 1rem;
+      bottom: -153px;
+      height: 210px;
     }
   }
-/* 
+
   @media screen and (max-width: 390px) {
     .robonomics-video {
-     right: 1rem;
+      bottom: -110px;
+      height: 230px;
     }
-  } */
+  }
 </style>

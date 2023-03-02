@@ -53,4 +53,11 @@ export default {
   .title-green h2 {
     color: var(--color-green);
   }
+
+
+  @media screen and (max-width: 560px) {
+    h2 {
+      font-size: calc(var(--base-font-size) * 2.1) 
+    }
+  }
 </style>

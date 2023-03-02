@@ -57,6 +57,7 @@ export default {
         amp: true
       },
       meta: [        
+        { name: 'theme-color', content: '#2949d3' },
         { key: 'description', name: 'description', content: description },
         // Some Open Graph Tags
         { property: "fb:app_id", content: "2432719273556839" },

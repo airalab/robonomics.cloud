@@ -51,11 +51,11 @@
           <h2>No third parties</h2>
           <p>With RWS you will have tha ability to control Smart home remotely without third party corporations, own your data, do not share with the vendor, escape centralized cloud server shutdowns.</p>
         </div>
-        <div class="link-with-arrow column link-with-arrow--mw animate-inside-left in-viewport" v-in-viewport.once >
-          <button @click="showModal = true" aria-label="open rws vs aws popup">
-            RWS vs AWS specification&nbsp;table
+          <button  class="link-with-arrow column link-with-arrow--mw"  @click="showModal = true" aria-label="open rws vs aws popup">
+
+            <span>RWS vs AWS specification&nbsp;table</span>
+            <span class="arrow animate-inside-left-fast in-viewport" v-in-viewport.once aria-hidden="true"></span>
           </button>
-        </div>
       </div>
     </section>
 
@@ -73,11 +73,12 @@
               :percentage="progress.percentage"
             />
           </div>
-          <g-link class="join-our-progress__survey__link animate-inside-swing" to="/smart-home-survey" aria-label="take our survey" v-in-viewport>
+          <g-link class="join-our-progress__survey__link" to="/smart-home-survey" aria-label="take our survey" >
             <div class="title-with-bg">
               <span>How ready are you for smart home?</span>
             </div>
             <span>Take our survey</span>
+            <span class="circle animate-inside-zoom in-viewport" v-in-viewport.once></span>
           </g-link>
         </div>
       </div>
@@ -93,7 +94,10 @@
           We are building decentralized application for the&nbsp;control&nbsp;of&nbsp;home IoT infrastructure with Robonomics and Home Assistant.
         </p>
         <div class="wrapper"> 
-          <g-image src="~/assets/images/computer.png" alt="screen"/>
+          <div class="dapp__img ">
+            <g-image class="beta animate-inside-rise-short in-viewport" v-in-viewport.once src="~/assets/images/beta.png" alt="screen"/>
+            <g-image class="screen animate-inside-rise in-viewport" v-in-viewport.once src="~/assets/images/screen.png" alt="screen"/>
+          </div>
           <div class="dapp__content">
             <p>Within the next months there are 3 key services will be available:</p>
             <ul class="dapp__list list-with-bullets">
@@ -101,11 +105,10 @@
               <li>Remote control with encryption</li>
               <li>User Management & Access Control</li>
             </ul>
-            <div class="link-with-arrow animate-inside-left in-viewport" v-in-viewport.once>
-              <g-link to="https://dapp.robonomics.network/#/" aria-label="visit our dapp">
-                dapp.robonomics.network
+              <g-link class="link-with-arrow" to="https://dapp.robonomics.network/#/" aria-label="visit our dapp">
+                <span>dapp.robonomics.network</span>
+                <span class="arrow animate-inside-left-fast in-viewport" v-in-viewport.once aria-hidden="true"></span>
               </g-link>
-            </div>
           </div>
         </div>
       </div>
@@ -116,11 +119,12 @@
       <div class="layout">
         <h2>How to connect Home Assistant</h2>
         <p>Home Assistant is an open-source home automation system that provides a centralized hub for controlling smart devices in your home network. By integrating with RWS, a decentralized cloud service, you can enhance the functionality and security of your smart home.</p>
-        <div class="link-with-arrow animate-inside-left in-viewport" v-in-viewport.once>
-          <g-link to="https://wiki.robonomics.network/docs/robonomics-smart-home-overview" aria-label="check our wiki">
-            Watch out the guide on Wiki
-          </g-link>
-        </div>
+
+        <g-link class="link-with-arrow" to="https://wiki.robonomics.network/docs/robonomics-smart-home-overview" aria-label="check our wiki">
+          <span>Watch out the guide on Wiki</span>
+          <span class="arrow animate-inside-left-fast in-viewport" v-in-viewport.once aria-hidden="true"></span>
+        </g-link>
+
       </div>
     </section>
 
@@ -134,11 +138,10 @@
           <li>Practical skills for setting up and connecting smart home equipment</li>
           <li>Basic skills for using the Robonomics parachain for IoT</li>
         </ul>
-        <div class="link-with-arrow animate-inside-left in-viewport" v-in-viewport.once>
-          <g-link to="https://robonomics.academy/en/online-courses/smart-home-course/" aria-label="visit our academy and check its courses">
-            Start course now
-          </g-link>
-        </div>
+        <g-link class="link-with-arrow" to="https://robonomics.academy/en/online-courses/smart-home-course/" aria-label="visit our academy and check its courses">
+          <span>Start course now</span>
+          <span class="arrow animate-inside-left-fast in-viewport" v-in-viewport.once aria-hidden="true"></span>
+        </g-link>
       </div>
     </section>
 
@@ -161,17 +164,17 @@ export default {
       subscanItems: [
         {
           id: 0,
-          amount: '7 755',
+          amount: '7755',
           title: 'Transfers'
         },
         {
           id: 1,
-          amount: '4 332 505',
+          amount: '4332505',
           title: 'Signed Extrinsics'
         },
         {
           id: 2,
-          amount: '2 862',
+          amount: '2862',
           title: 'Holders'
         },
       ],
@@ -292,9 +295,10 @@ export default {
     align-self: center;
   }
 
-  .join-our-progress__survey__link::before {
-    content: '';
+
+  .join-our-progress__survey__link .circle{
     position: absolute;
+    display: block;
     top: 0;
     left: 25px;
     max-width: 402px;
@@ -302,6 +306,7 @@ export default {
     height: 402px;
     background-color: var(--color-light);
     border-radius: 100%;
+    z-index: 0;
   }
 
   .join-our-progress__survey__link::after {
@@ -350,9 +355,27 @@ export default {
 
   .dapp .wrapper img {
     display: block;
+  }
+
+  .dapp__img {
+    position: relative;  
     align-self: end;
+  }
+
+  .dapp__img .beta {
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    max-width: 109px;
     width: 100%;
+    z-index: 0;
+  }
+
+  .dapp__img .screen {
+    position: relative;
     max-width: 322px;
+    width: 100%;
+    z-index: 5;
   }
 
   .dapp__content {
@@ -369,7 +392,6 @@ export default {
     font-weight: 500;
     margin-bottom: 0;
   }
-
 
   .home-assistant .layout,
   .dive-deep .layout  {
@@ -426,7 +448,21 @@ export default {
       background-size: auto;
     }
 
-    .dapp .wrapper img {
+    .text-bubble__wrapper {
+      transform: rotate(90deg);
+    }
+    
+    .text-bubble p {
+      padding-top: 52px;
+      padding-left: 0;
+      transform: rotate(-90deg);
+    }
+
+    .dapp .wrapper {
+      padding-top: var(--space);
+    }
+
+    .dapp__img {
       align-self: unset;
       margin-bottom: var(--space);
     }
@@ -437,10 +473,11 @@ export default {
 
     .dapp__list {
       margin-bottom: 0;
+      padding-left: 0;
     }
 
     .subscan {
-      width: 80%;
+      width: 60%;
       margin-bottom: calc(var(--space) * 2);
     }
 
@@ -452,22 +489,26 @@ export default {
 
   @media screen and (max-width: 560px) {
 
+    .polkadot-ecosystem {
+      padding-top: var(--space);
+    }
+
     .text-bubble {
       height: 248px;
     }
     
     .text-bubble p {
-      max-width: 285px;
+      max-width: 250px;
       padding: 20px;
-      padding-left: 45px;
+      padding-top: 39px;
     }
 
     .subscan {
-      width: 100%;
+      width: 80%;
       margin-bottom: var(--space);
     }
 
-    .join-our-progress__survey__link::before {
+    .join-our-progress__survey__link .circle {
       top: 61px;
       left: -3px;
       max-width: 274px;
@@ -490,6 +531,12 @@ export default {
       z-index: 10;
     }
 
+    .dapp__img .beta {
+      top: -35px;
+      right: -10px;
+      max-width: 80px;
+  } 
+
     .home-assistant .link-with-arrow,
     .dive-deep .link-with-arrow,
     .dapp .link-with-arrow  {
@@ -497,5 +544,20 @@ export default {
       width: 100%;
     }
 
+    .dive-deep__list li {
+      font-size: var(--base-font-size);
+    }
+
+  }
+
+  @media screen and (max-width: 390px) {
+    .polkadot-ecosystem {
+      padding-top: 0;
+    }
+
+    .subscan {
+      width: 100%;
+      margin-bottom: var(--space);
+    }
   }
 </style>
