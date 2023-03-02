@@ -15,7 +15,7 @@
       <!-- take survey -->
       <div class="survey__main layout" v-if="!showQuestion">
         <h2>How ready are you for&nbsp;smart&nbsp;home?</h2>
-        <div class="link-with-arrow white">
+        <div class="link-with-arrow white animate-inside-left-fast in-viewport" v-in-viewport.once>
             <button @click="startSurvey" aria-label="start survey for smart home">
               Take a  survey
             </button>

@@ -66,12 +66,19 @@
 	}
 
 	.animate-inside-left.in-viewport > * {
-
 		animation-name: fade-in-left;
 		animation-timing-function: ease-in-out;
 		animation-fill-mode: forwards;
 		animation-delay: 0.7s;
 		animation-duration: 1.5s;
+	}
+
+	.animate-inside-left-fast.in-viewport > * {
+		animation-name: fade-in-left;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: forwards;
+		animation-delay: 0.3s;
+		animation-duration: 0.8s;
 	}
 
 

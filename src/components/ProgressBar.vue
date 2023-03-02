@@ -82,7 +82,7 @@ export default {
     animation-delay: 0.8s;
     animation-fill-mode: forwards;
 
-    animation-duration: 0.5s;
+    animation-duration: 0.7s;
   }
 
   
