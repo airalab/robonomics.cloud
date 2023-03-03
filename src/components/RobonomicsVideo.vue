@@ -108,6 +108,9 @@ export default {
     .robonomics-video {
       bottom: -153px;
       height: 210px;
+      right: unset;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 

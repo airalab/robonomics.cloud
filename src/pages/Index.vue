@@ -8,6 +8,22 @@
       pageImage="/OG/robonomics_cloud.jpg"
     />
 
+        <!-- No third parties -->
+    <section class="no-third-parties animate-inside in-viewport" v-in-viewport.once>
+      <div class="layout wrapper">
+        <div>
+          <h2>No third parties</h2>
+          <p>With RWS you will have tha ability to control Smart home remotely without third party corporations, own your data, do not share with the vendor, escape centralized cloud server shutdowns.</p>
+        </div>
+          <button  class="link-with-arrow column link-with-arrow--mw"  @click="showModal = true" aria-label="open rws vs aws popup">
+
+            <span>RWS vs AWS specification&nbsp;table</span>
+            <span class="arrow animate-inside-left-fast in-viewport" v-in-viewport.once aria-hidden="true"></span>
+          </button>
+      </div>
+    </section>
+
+
     <!-- polkadot ecosystem -->
     <section class="polkadot-ecosystem animate-inside in-viewport" v-in-viewport.once>
       <div class="layout">
@@ -41,21 +57,6 @@
 
 
         </div>
-      </div>
-    </section>
-
-    <!-- No third parties -->
-    <section class="no-third-parties animate-inside in-viewport" v-in-viewport.once>
-      <div class="layout wrapper">
-        <div>
-          <h2>No third parties</h2>
-          <p>With RWS you will have tha ability to control Smart home remotely without third party corporations, own your data, do not share with the vendor, escape centralized cloud server shutdowns.</p>
-        </div>
-          <button  class="link-with-arrow column link-with-arrow--mw"  @click="showModal = true" aria-label="open rws vs aws popup">
-
-            <span>RWS vs AWS specification&nbsp;table</span>
-            <span class="arrow animate-inside-left-fast in-viewport" v-in-viewport.once aria-hidden="true"></span>
-          </button>
       </div>
     </section>
 
@@ -440,6 +441,12 @@ export default {
     }
 
     .no-third-parties .link-with-arrow {
+      margin-top: var(--space);
+      margin-left: 0;
+      flex-direction: row-reverse;
+    }
+
+    .no-third-parties .link-with-arrow .arrow {
       margin-left: 0;
       align-self: unset;
     }
@@ -489,7 +496,7 @@ export default {
 
   @media screen and (max-width: 560px) {
 
-    .polkadot-ecosystem {
+    .no-third-parties {
       padding-top: var(--space);
     }
 
@@ -550,8 +557,14 @@ export default {
 
   }
 
+  @media screen and (max-width: 540px) {
+    .link-with-arrow .arrow {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 390px) {
-    .polkadot-ecosystem {
+    .no-third-parties {
       padding-top: 0;
     }
 

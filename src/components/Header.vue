@@ -8,7 +8,7 @@
     </button>
 
     <!-- menu -->
-    <Menu :class="{'menu--active': isMenuOpen}" />
+    <Menu :class="{'menu--active': isMenuOpen}" @closeMenu="isMenuOpen = !isMenuOpen" />
 
   </header>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="menu">
+  <div class="menu" @click="$emit('closeMenu')">
     <div class="layout">
       <div>
         <h1 class="main-title">RWS <sub>Robonomics Web Services</sub></h1>
