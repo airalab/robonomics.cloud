@@ -200,6 +200,13 @@ export default {
     },
   },
 
+  mounted() {
+    if(this.$response === 'success') {
+      location.reload()
+    }
+  }
+
+
 }
 </script>
 

@@ -40,7 +40,7 @@
     >
 
     <div class="google-sheets-form__actions">
-      <button @click="onSubmit" v-if="result !== 'success'" class="button large" :class="{'wait': result === 'wait'}"  :disabled="result === 'error' || result === 'wait'">
+      <button @click="onSubmit" v-if="result !== 'success'" class="button large" :class="{'wait': result === 'wait'}"  :disabled="result === 'error' || result === 'wait' || !data_email">
         <span class="button-default" v-if="result !== 'wait'"></span>
         <span class="spinner">
           <Spinner v-if="result === 'wait'"/>
@@ -108,7 +108,7 @@ export default {
 
   watch: {
     'result': function(old, curr) {
-      if(old === 'success' || old === 'error') {
+      if(old === 'success' || old === 'error' || curr ==='success') {
         clearInterval(this.interval)
       }
     }
