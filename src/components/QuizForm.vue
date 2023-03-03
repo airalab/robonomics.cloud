@@ -176,7 +176,6 @@ export default {
     background-position: center;
   }
   .button:disabled {
-    opacity: 0.7;
     filter: none;
   }
   .survey__input {
@@ -220,7 +219,7 @@ export default {
   button:disabled {
     cursor: none;
     pointer-events: none;
-    opacity: 0.6;
+    /* opacity: 0.6; */
   }
 
   .survey__form span {
