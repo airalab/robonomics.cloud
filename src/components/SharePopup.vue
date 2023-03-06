@@ -45,7 +45,7 @@ export default {
 
     if(this.result.title === 'Great news!') {
       this.url = 'smart-home-survey/success'
-    } else if (this.result.title === 'Hmm…') {
+    } else if (this.result.title === `Don't stop now!`) {
       this.url = 'smart-home-survey/medium'
     } else {
       this.url = 'smart-home-survey/low'

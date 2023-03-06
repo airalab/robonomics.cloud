@@ -1,7 +1,7 @@
 <template>
   <MetaInfo
-    pageTitle="Hmm…"
-    pageDescription="It looks like a smart home might not be your cup of tea. But hey, who needs automation when you've got hands to switch things on and off, right? And don't worry, you can still enjoy modern conveniences in your home by incorporating a few smart devices to make life easier."
+    pageTitle="Don't stop now!"
+    pageDescription="It looks like you have enough intention to make your home smart. You're on the right path; after all, it's much more convenient not to worry about whether everything is switched off when you're going on vacation."
     pageImage = '/OG/survey_result_sh_medium-new.png'
     redirect
   />
