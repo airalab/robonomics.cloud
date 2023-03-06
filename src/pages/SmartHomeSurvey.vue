@@ -10,7 +10,7 @@
       :redirect="metaRedirect"
     />
 
-    <section class="survey">
+    <section class="survey" :class="{'withBg': !showQuestion}">
 
       <!-- take survey -->
       <div class="survey__main layout" v-if="!showQuestion">
@@ -176,20 +176,20 @@ export default {
 
       if(countOne > countThree && countOne > countTwo) {
         this.result.title = `Great news!`
-        this.result.text = `<span class="text-with-bg">You're all set for a smart home</span>. Just be careful with which cloud service you choose to centralize your devices and data. Otherwise, you may find your fridge ordering milk without your consent, and your vacuum secretly plotting against you.`
-        this.result.plainText = `You're all set for a smart home. Just be careful with which cloud service you choose to centralize your devices and data. Otherwise, you may find your fridge ordering milk without your consent, and your vacuum secretly plotting against you.`
+        this.result.text = `<span class="text-with-bg">You're ready to make your home a fully smart one</span>. However, it's important to choose your cloud service wisely when connecting your devices and storing data about your space. Otherwise, you may encounter your fridge ordering milk without your consent or your vacuum secretly plotting against you.`
+        this.result.plainText = `You're ready to make your home a fully smart one. However, it's important to choose your cloud service wisely when connecting your devices and storing data about your space. Otherwise, you may encounter your fridge ordering milk without your consent or your vacuum secretly plotting against you.`
         this.result.img = 'survey_sh_success.png'
         this.result.emailPic = 'https://static.robonomics.network/email/regular/robonomics-cloud-quiz-1/guy-smart-home-1.png';
       } else if (countTwo > countThree && countTwo > countOne || countTwo === countOne || countTwo === countThree) {
-        this.result.title = `Hmm…`
-        this.result.text = `<span class="text-with-bg">It looks like a smart home might not be your cup of tea</span>. But hey, who needs automation when you've got hands to switch things on and off, right? And don't worry, you can still enjoy modern conveniences in your home by incorporating a few smart devices to make life easier.`
-        this.result.plainText = `It looks like a smart home might not be your cup of tea. But hey, who needs automation when you've got hands to switch things on and off, right? And don't worry, you can still enjoy modern conveniences in your home by incorporating a few smart devices to make life easier.`
+        this.result.title = `Don't stop now!`
+        this.result.text = `<span class="text-with-bg">It looks like you have enough intention to make your home smart</span>. You're on the right path; after all, it's much more convenient not to worry about whether everything is switched off when you're going on vacation.`
+        this.result.plainText = `It looks like you have enough intention to make your home smart. You're on the right path; after all, it's much more convenient not to worry about whether everything is switched off when you're going on vacation.`
         this.result.img = 'survey_sh_medium.png'
         this.result.emailPic = 'https://static.robonomics.network/email/regular/robonomics-cloud-quiz-1/guy-smart-home-2.png';
       } else {
-        this.result.title = `Uh-oh!`
-        this.result.text = `<span class="text-with-bg">It seems like a smart home just isn't your jam</span>. That's okay, you can always rely on carrier pigeons to get messages across, and candles to light up your home.`
-        this.result.plainText = `It seems like a smart home just isn't your jam. That's okay, you can always rely on carrier pigeons to get messages across, and candles to light up your home.`
+        this.result.title = `Find your guru…`
+        this.result.text = `<span class="text-with-bg">Envision your home in complete harmony with the Internet of Things</span>. Imagine your devices moving and working together effortlessly, responding to your every need. Embracing the journey of setting up your smart home can be a transformative and fulfilling experience. All it takes is a little patience, dedication, and the willingness to invite positive change into your life.`
+        this.result.plainText = `Envision your home in complete harmony with the Internet of Things. Imagine your devices moving and working together effortlessly, responding to your every need. Embracing the journey of setting up your smart home can be a transformative and fulfilling experience. All it takes is a little patience, dedication, and the willingness to invite positive change into your life.`
         this.result.img = 'survey_sh_low.png'
         this.result.emailPic = 'https://static.robonomics.network/email/regular/robonomics-cloud-quiz-1/guy-smart-home-3.png';
       }
@@ -216,10 +216,14 @@ export default {
     margin-bottom: 0;
     min-height: 646px;
     height: 100%;
-    background-image: url('../assets/images/blue__houses.png');
+    /* background-image: url('../assets/images/blue__houses.png'); */
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: 1080px;
+  }
+
+  .withBg {
+    background-image: url('../assets/images/blue__houses.png');
   }
 
 

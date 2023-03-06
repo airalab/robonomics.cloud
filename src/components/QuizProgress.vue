@@ -32,7 +32,7 @@ export default {
 
   h2 {
     color: var(--color-light);
-    font-size: calc(var(--base-font-size) * 3);
+    font-size: calc(var(--base-font-size) * 1.5);
   }
 
   .quiz-bar {
@@ -57,7 +57,7 @@ export default {
 
   @media screen and (max-width: 560px) {
     h2 {
-      font-size: calc(var(--base-font-size) * 2.1) 
+      font-size: calc(var(--base-font-size) * 1.1) 
     }
   }
 </style>
