@@ -18,7 +18,6 @@ module.exports = {
       use: 'gridsome-plugin-twitter-pixel',
       options: {
         id: 'tw-o0lc5-oejsq',
-        email_address: null 
       }
     },
   ],
