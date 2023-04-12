@@ -10,7 +10,12 @@ import '~/assets/styles/animation.css'
 import DefaultLayout from '~/layouts/Default.vue'
 import MetaInfo from '~/components/MetaInfo.vue'
 
+
 import Vue from 'vue'
+import Vuex from 'vuex'
+import VueCookies from 'vue-cookies';
+import VueGtag from "vue-gtag";
+import VueYandexMetrika from 'vue-yandex-metrika'
 
 // directive for animation in view
 import inViewportDirective from 'vue-in-viewport-directive'
@@ -28,7 +33,9 @@ import {
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-export default function (Vue, { router, head, isClient }) {
+export default function (Vue, { router, head, isClient, appOptions }) {
+  Vue.use(Vuex);
+  
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
   Vue.component('MetaInfo', MetaInfo)
@@ -41,4 +48,40 @@ export default function (Vue, { router, head, isClient }) {
     faFacebook,
     faTwitter
   )
+
+  appOptions.store = new Vuex.Store({
+    state: {
+      userTracker: {},
+    },
+   mutations: {
+      SET_USER_TRACKER(state, userTracker) {
+        state.userTracker = userTracker;
+      }
+   },
+  });
+
+
+  Vue.use(VueGtag, {
+    config: { id: "G-MG4RLWF3MM" },
+    // includes: [
+    //   { id: 'AW-11021567627' },
+    // ]
+  });
+
+  if(isClient) {
+    Vue.use(VueCookies, { expire: '90d'});
+    Vue.$cookies.config('90d')
+
+    Vue.use(VueYandexMetrika, {
+      id: 93188742,
+      env: process.env.NODE_ENV,
+      options:  {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        
+      }
+    });
+  }
 }
