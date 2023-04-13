@@ -52,20 +52,21 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   appOptions.store = new Vuex.Store({
     state: {
       userTracker: {},
+      emailTwitter: null
     },
    mutations: {
       SET_USER_TRACKER(state, userTracker) {
         state.userTracker = userTracker;
-      }
+      },
+      SET_TWITTER_EMAIL (state, email) {
+        state.emailTwitter = email;
+      },
    },
   });
 
 
   Vue.use(VueGtag, {
     config: { id: "G-MG4RLWF3MM" },
-    // includes: [
-    //   { id: 'AW-11021567627' },
-    // ]
   });
 
   if(isClient) {
@@ -82,6 +83,21 @@ export default function (Vue, { router, head, isClient, appOptions }) {
         webvisor:true,
         
       }
+    });
+
+    head.script.push({
+      // twitter pixel innerHTML
+      innerHTML: `
+      !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+      },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+      a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+      twq('config','o0lc5');
+      twq('event', 'tw-o0lc5-oejsq', {
+        email_address: ${appOptions.store.state.emailTwitter}
+      });
+      twq('track','PageView');
+      `,
+      body: true,
     });
   }
 }

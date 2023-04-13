@@ -92,6 +92,8 @@ export default {
         this.data_email = '';
       }
 
+      this.$store.commit('SET_TWITTER_EMAIL', this.data_email)
+
       this.interval = setInterval(() => {
         this.result = this.$response
         if(this.result === 'success') {

@@ -14,12 +14,12 @@ module.exports = {
     {
       use: "gridsome-plugin-google-sheets-post",
     },
-    {
-      use: 'gridsome-plugin-twitter-pixel',
-      options: {
-        id: 'tw-o0lc5-oejsq',
-      }
-    },
+    // {
+    //   use: 'gridsome-plugin-twitter-pixel',
+    //   options: {
+    //     id: 'tw-o0lc5-oejsq'
+    //   }
+    // },
   ],
 
   chainWebpack: config => {
