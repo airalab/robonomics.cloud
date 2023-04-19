@@ -244,6 +244,10 @@ export default {
     overflow: hidden;
   }
 
+  .survey-results.layout {
+    padding-bottom: 0.5rem;
+  }
+
   .survey-get-results h3 {
     color: var(--color-light);
   }
@@ -297,7 +301,7 @@ export default {
   }
 
   .share__btn {
-    padding: calc(var(--space) * 2) 0;
+    padding: calc(var(--space) * 0.5) 0;
     color: var(--color-light);
     padding-right: 75px;
     font-weight: 600;
