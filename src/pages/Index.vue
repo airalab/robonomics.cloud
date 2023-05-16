@@ -4,7 +4,7 @@
     <!-- meta -->
     <MetaInfo
       pageTitle="Robonomics Web Services"
-      pageDescription="Decentralized cloud over web3 technologies for Robotics and IoT."
+      pageDescription="A decentralized cloud leveraging web3 technologies for Robotics and IoT."
       pageImage="/OG/robonomics_cloud.jpg"
     />
 
@@ -13,7 +13,7 @@
       <div class="layout wrapper">
         <div>
           <h2>No third parties</h2>
-          <p>With RWS you will have tha ability to control Smart home remotely without third party corporations, own your data, do not share with the vendor, escape centralized cloud server shutdowns.</p>
+          <p>RWS enables you to remotely control your Smart Home, without relying on third-party corporations, reclaiming ownership of your data and escaping the risk of centralized cloud server shutdowns.</p>
         </div>
           <button  class="link-with-arrow column link-with-arrow--mw"  @click="showModal = true" aria-label="open rws vs aws popup">
 
@@ -28,7 +28,7 @@
     <section class="polkadot-ecosystem animate-inside in-viewport" v-in-viewport.once>
       <div class="layout">
         <h2>Polkadot ecosystem</h2>
-        <p>Robonomics launched its own parachain, a specialized blockchain, in Kusama network. It allows to scale up launching and sending a telemetry of IoT devices by performing transactions within network.</p>
+        <p>Robonomics launched its own dedicated parachain, a specialized blockchain, on the Kusama network. It enables seamless scalability for launching and transmitting telemetry data from IoT devices, all accomplished through efficient transactions within the network.</p>
 
         <div class="wrapper">
           <div class="subscan">
@@ -49,7 +49,7 @@
           <div class="text-bubble__wrapper animate-inside-float-scale in-viewport" v-in-viewport.once>
 
             <div class="text-bubble">
-              <p> During 2022, the Robonomics parachain in Kusama was used in a dozen R&D projects and processed more than 4 million transactions for IoT devices in total.</p>
+              <p> During 2022, the Robonomics parachain in Kusama was used in a dozen R&D projects and processed more than 4 million transactions for IoT devices.</p>
             </div>
 
           </div>
@@ -92,7 +92,7 @@
       <div class="layout">
         <h2>Decentralized web app </h2>
         <p>
-          We are building decentralized application for the&nbsp;control&nbsp;of&nbsp;home IoT infrastructure with Robonomics and Home Assistant.
+          We are building a decentralized application (dApp) to control your home IoT infrastructure with Robonomics and Home Assistant.
         </p>
         <div class="wrapper"> 
           <div class="dapp__img ">
@@ -100,7 +100,7 @@
             <g-image class="screen animate-inside-rise in-viewport" v-in-viewport.once src="~/assets/images/screen.png" alt="screen"/>
           </div>
           <div class="dapp__content">
-            <p>Within the next months there are 3 key services will be available:</p>
+            <p>Within the next months there will be 3 key services available:</p>
             <ul class="dapp__list list-with-bullets">
               <li>Smart Home security backup</li>
               <li>Remote control with encryption</li>
@@ -119,10 +119,10 @@
     <section class="home-assistant section-purple animate-inside in-viewport" v-in-viewport.once>
       <div class="layout">
         <h2>How to connect Home Assistant</h2>
-        <p>Home Assistant is an open-source home automation system that provides a centralized hub for controlling smart devices in your home network. By integrating with RWS, a decentralized cloud service, you can enhance the functionality and security of your smart home.</p>
+        <p>Home Assistant is an open-source home automation system that provides a centralized hub for controlling smart devices in your home network. By integrating RWS, our decentralized cloud service, you can enhance the functionality and security of your smart home.</p>
 
         <g-link class="link-with-arrow" to="https://wiki.robonomics.network/docs/robonomics-smart-home-overview" aria-label="check our wiki">
-          <span>Watch out the guide on Wiki</span>
+          <span>Check out the Robonomics Smart Home guide on our Wiki</span>
           <span class="arrow animate-inside-left-fast in-viewport" v-in-viewport.once aria-hidden="true"></span>
         </g-link>
 
@@ -133,7 +133,7 @@
     <section class="dive-deep section-purple animate-inside in-viewport" v-in-viewport.once>
       <div class="layout">
         <h2>Dive deeper</h2>
-        <p>Take a <b>free online course</b> “Sovereign Smart Home” on Robonomics academy and get:</p>
+        <p>Take our <b>free online course</b> “Sovereign Smart Home” on <a class="link" href="https://robonomics.academy/en/learn/smart-home-course/overview/" target="_blank">Robonomics.Academy</a> and get:</p>
         <ul class="dive-deep__list list-with-bullets">
           <li>Knowledge of smart home architecture based on common protocols and developments</li>
           <li>Practical skills for setting up and connecting smart home equipment</li>
