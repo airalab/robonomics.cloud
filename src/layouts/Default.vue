@@ -54,7 +54,7 @@ export default {
 
 <style>
 
-  .my-tracker {
+  .my-tracker.user-tracker {
     background-color: var(--color-dark-purple);
   }
 
