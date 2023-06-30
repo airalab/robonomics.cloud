@@ -7,7 +7,11 @@
     </div>
     <client-only>
 
-      <UserTracker v-show="$cookies && !$cookies.get('userTracker') && !this.$store.state.userTracker.option" />
+      <userTracker
+        privacyPolicyLink="/privacy-policy"
+        classCustom="my-tracker"
+        @activateTracker="activateTracker"
+      />
 
     </client-only>
     <Footer/>
@@ -27,8 +31,7 @@ export default {
   components: {
     Header: () => import('~/components/Header.vue'),
     Hero: () => import('~/components/Hero.vue'),
-    Footer: () => import('~/components/Footer.vue'),
-    UserTracker: () => import('~/components/UserTracker.vue')
+    Footer: () => import('~/components/Footer.vue')
   },
 
   props: {
@@ -37,20 +40,27 @@ export default {
       default: true
     }
   },
-
-  mounted() {
-      if($cookies.get('userTracker') === 'allow metrics') {
-        this.$gtag.pageview(this.$route)
-        this.$nextTick(() => {
-          if (this.$metrika) {
-            this.$metrika.hit(this.$route)
-          }
-        });
+  methods: {
+    activateTracker() {
+      if(this.$matomo) {
+          this.$matomo && this.$matomo.setConsentGiven();
+          this.$matomo && this.$matomo.enableLinkTracking();
+          this.$matomo && this.$matomo.trackPageView();
       }
     }
+  },
 }
 </script>
 
-<style scoped>
+<style>
+
+  .my-tracker {
+    background-color: var(--color-dark-purple);
+  }
+
+  .my-tracker button:hover {
+    color: var(--color-light);
+    background-color: var(--color-blue);
+  }
 
 </style>

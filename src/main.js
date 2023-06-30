@@ -13,13 +13,14 @@ import MetaInfo from '~/components/MetaInfo.vue'
 
 import Vue from 'vue'
 import Vuex from 'vuex'
-import VueCookies from 'vue-cookies';
-import VueGtag from "vue-gtag";
-import VueYandexMetrika from 'vue-yandex-metrika'
 
 // directive for animation in view
 import inViewportDirective from 'vue-in-viewport-directive'
 Vue.directive('in-viewport', inViewportDirective)
+
+// tracker component
+import userTracker from 'vue-client-actions-tracker-component'
+import '../node_modules/vue-client-actions-tracker-component/dist/vue-client-actions-tracker-component.css'
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -51,39 +52,17 @@ export default function (Vue, { router, head, isClient, appOptions }) {
 
   appOptions.store = new Vuex.Store({
     state: {
-      userTracker: {},
       emailTwitter: null
     },
    mutations: {
-      SET_USER_TRACKER(state, userTracker) {
-        state.userTracker = userTracker;
-      },
       SET_TWITTER_EMAIL (state, email) {
         state.emailTwitter = email;
       },
    },
   });
 
-
-  Vue.use(VueGtag, {
-    config: { id: "G-MG4RLWF3MM" },
-  });
-
   if(isClient) {
-    Vue.use(VueCookies, { expire: '90d'});
-    Vue.$cookies.config('90d')
-
-    Vue.use(VueYandexMetrika, {
-      id: 93188742,
-      env: process.env.NODE_ENV,
-      options:  {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true,
-        
-      }
-    });
+    Vue.use(userTracker);
 
     head.script.push({
       // twitter pixel innerHTML

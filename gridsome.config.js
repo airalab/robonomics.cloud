@@ -14,12 +14,14 @@ module.exports = {
     {
       use: "gridsome-plugin-google-sheets-post",
     },
-    // {
-    //   use: 'gridsome-plugin-twitter-pixel',
-    //   options: {
-    //     id: 'tw-o0lc5-oejsq'
-    //   }
-    // },
+    {
+      use: 'gridsome-plugin-matomo',
+      options: {
+        host: 'https://matomo.robonomics.network/',
+        siteId: 2,
+        requireConsent: true
+      }
+    }
   ],
 
   chainWebpack: config => {
