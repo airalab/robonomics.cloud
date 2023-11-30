@@ -5,15 +5,6 @@
     <div :class="{'layout': useClass}">
       <slot/>
     </div>
-    <client-only>
-
-      <userTracker
-        privacyPolicyLink="/privacy-policy"
-        classCustom="my-tracker"
-        @activateTracker="activateTracker"
-      />
-
-    </client-only>
     <Footer/>
   </div>
 </template>
@@ -42,25 +33,17 @@ export default {
   },
   methods: {
     activateTracker() {
-      if(this.$matomo) {
-          this.$matomo && this.$matomo.setConsentGiven();
-          this.$matomo && this.$matomo.enableLinkTracking();
-          this.$matomo && this.$matomo.trackPageView();
-      }
+      this.$matomo && this.$matomo.disableCookies();
+      this.$matomo && this.$matomo.trackPageView();
     }
   },
+
+  mounted() {
+    this.activateTracker();
+  }
 }
 </script>
 
 <style>
-
-  .my-tracker.user-tracker {
-    background-color: var(--color-dark-purple);
-  }
-
-  .my-tracker button:hover {
-    color: var(--color-light);
-    background-color: var(--color-blue);
-  }
 
 </style>

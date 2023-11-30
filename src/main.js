@@ -18,10 +18,6 @@ import Vuex from 'vuex'
 import inViewportDirective from 'vue-in-viewport-directive'
 Vue.directive('in-viewport', inViewportDirective)
 
-// tracker component
-import userTracker from 'vue-client-actions-tracker-component'
-import '../node_modules/vue-client-actions-tracker-component/dist/vue-client-actions-tracker-component.css'
-
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -62,7 +58,6 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   });
 
   if(isClient) {
-    Vue.use(userTracker);
 
     head.script.push({
       // twitter pixel innerHTML

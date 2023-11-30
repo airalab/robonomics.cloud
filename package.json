@@ -17,7 +17,6 @@
     "gridsome-plugin-google-sheets-post": "^2.0.1",
     "gridsome-plugin-matomo": "^0.1.0",
     "gridsome-plugin-twitter-pixel": "0.0.1",
-    "vue-client-actions-tracker-component": "^1.0.2",
     "vue-in-viewport-directive": "^2.0.2",
     "vueinview": "^1.0.7",
     "vuex": "^3.6.2"

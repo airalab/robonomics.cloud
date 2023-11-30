@@ -55,6 +55,11 @@
       </div>
     </div>
 
+
+    <div class="footer__privacy-policy">
+        <g-link to="/privacy-policy">Privacy Policy</g-link>
+      </div>
+
   </footer>
 </template>
 
@@ -75,6 +80,7 @@ export default {
 
 <style scoped>
   .footer {
+    padding-bottom: 15px;
     background-color: var(--color-gray);
   }
   
@@ -205,6 +211,15 @@ export default {
   .decor-line svg path {
     stroke: #fff;
   }
+
+  .footer__privacy-policy {
+    font-weight: 600;
+    background-color: var(--color-light);
+    text-align: center;
+    /* color: var(--color-light); */
+    text-transform: uppercase;
+  }
+
   @media screen and (max-width: 1260px) {
     .contacts__link svg {
       width: 100px;
